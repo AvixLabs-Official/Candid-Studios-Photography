@@ -632,6 +632,16 @@ img {
   box-shadow: var(--shadow-sm);
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.pricing-item-card.minimal-card a.btn-candid-black {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
 }
 
 .pricing-item-card.minimal-card:hover {
@@ -681,6 +691,9 @@ img {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
 }
 
 .plan-price-box {
