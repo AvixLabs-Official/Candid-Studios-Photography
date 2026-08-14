@@ -110,7 +110,7 @@ function initMobileDrawer() {
   });
 }
 
-/* Render Main Shoots Grid (Wedding, Newborn, Maternity, Portrait, Fashion, Chroma) */
+/* Render Main Shoots Grid */
 function renderMainShootsGrid() {
   const container = document.getElementById('main-shoots-grid');
   if (!container || !CANDID_DATA?.shootCategories) return;
@@ -188,7 +188,7 @@ function renderBackdropsGrid() {
   `).join('');
 }
 
-/* Render Pricing Grid */
+/* Exact Correct Transparent Pricing Grid Renderer */
 function renderPricingGrid() {
   const container = document.getElementById('pricing-grid');
   if (!container || !CANDID_DATA?.packages) return;
@@ -196,8 +196,11 @@ function renderPricingGrid() {
   container.innerHTML = CANDID_DATA.packages.map(p => `
     <article class="pricing-item-card ${p.featured ? 'popular' : ''}">
       ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
-      <h3 class="plan-title">${p.name}</h3>
-      <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'};">${p.capacity}</span>
+      
+      <div class="pricing-header-box">
+        <span class="plan-category-tag">${p.capacity}</span>
+        <h3 class="plan-title">${p.name}</h3>
+      </div>
       
       <div class="plan-price-box">
         <span class="plan-amount">${p.price}</span>
@@ -207,13 +210,13 @@ function renderPricingGrid() {
       <ul class="plan-list">
         ${p.features.map(f => `
           <li>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
             <span>${f}</span>
           </li>
         `).join('')}
       </ul>
 
-      <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black" style="margin-top:auto; justify-content:center; ${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''}">
+      <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black btn-block" style="${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''}">
         <span>Book ${p.name}</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
