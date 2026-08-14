@@ -329,11 +329,75 @@ img {
   overflow: hidden;
 }
 
+/* Floating Hand-Drawn Line Art Sketches Around Hero Sides */
+.sketch-element {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  color: #24221F;
+  opacity: 0.28;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sketch-camera {
+  top: 12%;
+  left: 2%;
+  transform: rotate(-12deg);
+  animation: floatSketchSlow 7s ease-in-out infinite alternate;
+}
+
+.sketch-reel {
+  top: 12%;
+  right: 2.5%;
+  transform: rotate(15deg);
+  animation: spinSlow 28s linear infinite;
+}
+
+.sketch-tripod {
+  bottom: 8%;
+  left: 2.5%;
+  transform: rotate(6deg);
+  animation: floatSketchSlow 8s ease-in-out infinite alternate-reverse;
+}
+
+.sketch-aperture {
+  bottom: 12%;
+  right: 3%;
+  transform: rotate(-8deg);
+  animation: spinSlow 32s linear infinite reverse;
+}
+
+.sketch-flash {
+  top: 54%;
+  left: 1.5%;
+  transform: rotate(-18deg);
+  animation: floatSketchSlow 9s ease-in-out infinite alternate;
+}
+
+.sketch-filmstrip {
+  top: 58%;
+  right: 1.5%;
+  transform: rotate(14deg);
+  animation: floatSketchSlow 7.5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatSketchSlow {
+  0% { transform: translateY(0px) rotate(-10deg); }
+  100% { transform: translateY(-16px) rotate(-3deg); }
+}
+
+@keyframes spinSlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .hero-exact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-exact-left {
