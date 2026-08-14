@@ -76,66 +76,69 @@
     </ul>
   </div>
 
-  <!-- Hero Section -->
-  <section class="candid-hero" id="home">
+  <!-- ==========================================================================
+     EXACT HERO SECTION (MATCHING USER'S VIDEO RECORDING 1-TO-1)
+     ========================================================================== -->
+  <section class="candid-hero-exact" id="home">
     <div class="container">
-      <div class="candid-hero-grid">
+      <div class="hero-exact-grid">
         
-        <!-- Hero Text -->
-        <div class="candid-hero-text">
-          <div class="candid-pill-tag">
-            <span class="pulse-dot"></span>
-            <span>SELF PORTRAIT STUDIO • NOTTING HILL, LONDON</span>
-          </div>
+        <!-- Left Column: Typography & Blush CTA Button -->
+        <div class="hero-exact-left">
+          <h1 class="hero-exact-heading">
+            A self portrait studio in<br>London where the<br>photographer is you.
+          </h1>
 
-          <h1 class="candid-hero-heading">Self Portrait Studio in Notting Hill, London.</h1>
-
-          <p class="candid-hero-lead">
-            Starting at £75. You take the shots and we handle the lighting, set, and 250+ images same day. 330+ five-star reviews. LinkedIn headshots, team shoots, personal branding photoshoots.
+          <p class="hero-exact-subheading">
+            Take control of your story.
           </p>
 
-          <div class="candid-hero-cta-group">
-            <a href="#booking" class="btn-candid-black btn-lg">
-              <span>Book a Session (£75)</span>
-              <span class="arrow">→</span>
-            </a>
-            <a href="#pricing" class="btn-candid-outline btn-lg">
-              <span>Explore Packages</span>
-            </a>
-          </div>
+          <p class="hero-exact-price">
+            Sessions from £75.
+          </p>
 
-          <div class="candid-hero-reviews-badge">
-            <div class="stars">★★★★★</div>
-            <div class="badge-text">330+ Five-Star Google & Trustpilot Reviews</div>
-          </div>
+          <a href="#booking" class="btn-hero-blush">
+            BOOK A SESSION
+          </a>
         </div>
 
-        <!-- Hero Media / Studio Clicker Interactive Widget -->
-        <div class="candid-hero-media" id="clicker-simulator">
-          <div class="stage-frame">
-            <div class="flash-overlay" id="flash-overlay"></div>
-            <div class="viewfinder-hud">
-              <span class="hud-rec">REC • LIVE STUDIO</span>
-              <span class="hud-counter">SHOTS: <strong id="click-counter">0</strong></span>
+        <!-- Right Column: Tilted Polaroid Composite Frame & Automated Photo Slideshow -->
+        <div class="hero-exact-right">
+          <div class="polaroid-composite-wrapper">
+            
+            <!-- Background Wireframe Sphere Accent -->
+            <div class="decor-wireframe-globe">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4A453E" stroke-width="0.7" opacity="0.35">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
             </div>
-            <img id="stage-active-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" alt="Self Portrait Shoot in Notting Hill Studio">
-          </div>
 
-          <div class="stage-controls">
-            <button class="shutter-click-btn" id="shutter-trigger">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg>
-              <span>PRESS CLICKER 📸</span>
-            </button>
+            <!-- Background Pink Grid Accent Box -->
+            <div class="decor-pink-grid-box"></div>
 
-            <div class="color-swatches">
-              <span class="swatch-label">SET:</span>
-              <div class="swatch active" data-color="ivory" style="background:#F5F0E6;" onclick="switchBackdrop('ivory')" title="Warm Ivory"></div>
-              <div class="swatch" data-color="charcoal" style="background:#1A1A18;" onclick="switchBackdrop('charcoal')" title="Midnight Charcoal"></div>
-              <div class="swatch" data-color="crimson" style="background:#8B2626;" onclick="switchBackdrop('crimson')" title="Editorial Crimson"></div>
-              <div class="swatch" data-color="sage" style="background:#7A8B7B;" onclick="switchBackdrop('sage')" title="Soft Sage"></div>
+            <!-- Main Tilted Polaroid Card -->
+            <div class="main-polaroid-card">
+              <div class="polaroid-photo-box">
+                <img id="hero-slideshow-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" alt="Self Portrait Studio Shoot">
+              </div>
+
+              <div class="polaroid-bottom-bar">
+                <div class="sticker-lets-candid">
+                  <span>let's get</span> <strong>candid</strong>
+                </div>
+                <span class="polaroid-brand-logo">candid</span>
+              </div>
             </div>
+
+            <!-- Top-Right Overlaid Mini Photobooth Strip -->
+            <div class="mini-strip-overlay">
+              <div class="strip-photo"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Mini Strip 1"></div>
+              <div class="strip-photo"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Mini Strip 2"></div>
+              <div class="strip-photo"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80" alt="Mini Strip 3"></div>
+            </div>
+
           </div>
-          <span id="active-set-title" class="stage-set-name">Warm Ivory Backdrop Set</span>
         </div>
 
       </div>

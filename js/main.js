@@ -7,6 +7,7 @@ let clickTotal = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
+  initHeroSlideshow();
   renderHowItWorksGrid();
   renderBackdropsGrid();
   renderPricingGrid();
@@ -18,6 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
   initBookingForm();
   initMobileDrawer();
 });
+
+/* Hero Polaroid Automated Image Slideshow (Exact behavior from video) */
+function initHeroSlideshow() {
+  const imgEl = document.getElementById('hero-slideshow-img');
+  if (!imgEl) return;
+
+  const slides = [
+    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80',
+    'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80',
+    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80',
+    'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1000&q=80',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80'
+  ];
+
+  let currentIndex = 0;
+
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    imgEl.style.opacity = '0';
+    setTimeout(() => {
+      imgEl.src = slides[currentIndex];
+      imgEl.style.opacity = '1';
+    }, 250);
+  }, 2800);
+}
 
 /* Header Scroll Transition */
 function initHeaderScroll() {
