@@ -8,17 +8,60 @@ let clickTotal = 0;
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initHeroSlideshow();
+  initGalleryCarousel();
   renderHowItWorksGrid();
   renderBackdropsGrid();
   renderPricingGrid();
   renderCorporateGrid();
-  renderGalleryGrid();
   renderReviewsGrid();
   renderFaqsAccordion();
   initShutterSimulator();
   initBookingForm();
   initMobileDrawer();
 });
+
+/* Exact Gallery Carousel (Matching gallery demo.mp4 video 1-to-1) */
+function initGalleryCarousel() {
+  const track = document.getElementById('gallery-carousel-track');
+  if (!track) return;
+
+  const cards = Array.from(track.children);
+  if (cards.length === 0) return;
+
+  let activeIndex = 1; // Start with second card in center
+
+  function updateCarouselState() {
+    cards.forEach((card, idx) => {
+      if (idx === activeIndex) {
+        card.classList.add('center-focus');
+      } else {
+        card.classList.remove('center-focus');
+      }
+    });
+
+    // Calculate translation offset so activeIndex card is exactly centered in viewport
+    const viewportWidth = window.innerWidth;
+    const cardWidth = 320;
+    const cardGap = 36;
+    const itemFullWidth = cardWidth + cardGap;
+    
+    // Offset calculation
+    const centerOffset = (viewportWidth / 2) - (cardWidth / 2) - (activeIndex * itemFullWidth);
+    track.style.transform = `translateX(${centerOffset}px)`;
+  }
+
+  // Initial positioning
+  updateCarouselState();
+
+  // Auto transition every 2.4 seconds (matching video frame timing)
+  setInterval(() => {
+    activeIndex = (activeIndex + 1) % cards.length;
+    updateCarouselState();
+  }, 2400);
+
+  // Recalculate on window resize
+  window.addEventListener('resize', updateCarouselState);
+}
 
 /* Hero Polaroid Automated Image Slideshow (Exact behavior from video) */
 function initHeroSlideshow() {
