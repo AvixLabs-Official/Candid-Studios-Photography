@@ -697,13 +697,15 @@ img {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 36px 28px;
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
   position: relative;
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
   height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .pricing-item-card:hover {

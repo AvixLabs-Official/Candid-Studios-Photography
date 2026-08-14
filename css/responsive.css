@@ -1,45 +1,59 @@
 /* ==========================================================================
-   CANDID STUDIOS NOTTING HILL — RESPONSIVE STYLES
+   A P STUDIO KOLKATA — RESPONSIVE STYLES (FIX PRICING & CONTAINER BOUNDS)
    ========================================================================== */
 
-@media (max-width: 1180px) {
-  .steps-grid,
-  .backdrops-grid,
-  .pricing-grid {
+@media (max-width: 1200px) {
+  .candid-grid-4col {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .candid-nav-links {
-    gap: 16px;
+  .candid-grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .candid-nav-links a {
-    font-size: 0.72rem;
+  .hero-exact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
   }
 }
 
-@media (max-width: 1024px) {
-  .candid-nav-desktop {
+@media (max-width: 992px) {
+  .candid-nav-menu {
     display: none;
   }
 
-  .mobile-menu-toggle {
-    display: block;
-    cursor: pointer;
+  .mobile-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--bg-surface);
     color: var(--color-text);
   }
 
-  .hero-grid {
+  .hero-exact-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
+    text-align: center;
   }
 
-  .corporate-grid {
+  .hero-exact-left {
+    max-width: 100%;
+  }
+
+  .candid-grid-3col,
+  .candid-grid-2col {
     grid-template-columns: 1fr;
   }
 
-  .retrobooth-grid {
+  .candid-retrobooth-card {
     grid-template-columns: 1fr;
+    padding: 32px 24px;
   }
 
   .booking-grid {
@@ -53,38 +67,65 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding: 0 16px;
   }
 
-  .announcement-bar {
-    font-size: 0.68rem;
+  .candid-section {
+    padding: 60px 0;
+  }
+
+  .candid-announcement-bar {
+    font-size: 0.65rem;
     padding: 8px 12px;
+    flex-direction: column;
+    gap: 4px;
   }
 
-  .candid-header {
-    height: 76px;
+  .hero-exact-heading {
+    font-size: 2.4rem;
   }
 
-  .hero-title {
-    font-size: 2.6rem;
-  }
-
-  .steps-grid,
-  .backdrops-grid,
-  .pricing-grid,
-  .gallery-grid-3col,
-  .reviews-grid {
+  .candid-grid-4col {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .sim-stage-view {
-    height: 300px;
+  .pricing-toggle-wrapper {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 18px;
+    width: 100%;
   }
 
-  .corporate-box,
-  .booking-container-box,
-  .retrobooth-grid {
-    padding: 28px 20px;
+  .fun-addons-wrapper {
+    padding: 24px 18px;
+  }
+
+  .addons-pills-grid {
+    flex-direction: column;
+  }
+
+  .addon-pill-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .addons-total-bar {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .candid-dark-box {
+    padding: 36px 20px;
+  }
+
+  .booking-wrapper {
+    padding: 24px 16px;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
   }
 
   .footer-grid {
