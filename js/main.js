@@ -1,5 +1,6 @@
 /* ==========================================================================
-   A P STUDIO BAGHAJATIN, KOLKATA — MAIN JAVASCRIPT ORCHESTRATOR
+   RONGBONG STUDIO BAGHAJATIN, KOLKATA — MAIN JAVASCRIPT ORCHESTRATOR
+   (EST-2016 • EXPERT PHOTOGRAPHY & STORYTELLING)
    ========================================================================== */
 
 let activeColor = 'ivory';
