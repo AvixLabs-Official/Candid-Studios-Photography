@@ -4,6 +4,8 @@
 
 let activeColor = 'ivory';
 let clickTotal = 0;
+let isBundleMode = false;
+let selectedAddonsSum = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
@@ -13,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderHowItWorksGrid();
   renderBackdropsGrid();
   renderPricingGrid();
+  initPricingToggle();
   renderCorporateGrid();
   renderReviewsGrid();
   renderFaqsAccordion();
@@ -188,40 +191,88 @@ function renderBackdropsGrid() {
   `).join('');
 }
 
-/* Exact Correct Transparent Pricing Grid Renderer */
+/* Interactive Pricing Billing Toggle Switch */
+function initPricingToggle() {
+  const switchBtn = document.getElementById('pricing-toggle-switch');
+  const labelSingle = document.getElementById('toggle-label-single');
+  const labelBundle = document.getElementById('toggle-label-bundle');
+
+  switchBtn?.addEventListener('click', () => {
+    isBundleMode = !isBundleMode;
+    switchBtn.classList.toggle('active', isBundleMode);
+    labelSingle?.classList.toggle('active', !isBundleMode);
+    labelBundle?.classList.toggle('active', isBundleMode);
+    renderPricingGrid();
+  });
+}
+
+/* Fun Interactive Add-ons Calculator */
+function toggleAddon(btn, amount) {
+  btn.classList.toggle('active');
+  if (btn.classList.contains('active')) {
+    selectedAddonsSum += amount;
+  } else {
+    selectedAddonsSum -= amount;
+  }
+
+  const totalBar = document.getElementById('addons-total-bar');
+  const totalPriceEl = document.getElementById('addons-total-price');
+
+  if (selectedAddonsSum > 0) {
+    if (totalBar) totalBar.style.display = 'flex';
+    if (totalPriceEl) totalPriceEl.textContent = `+₹${selectedAddonsSum.toLocaleString()}`;
+  } else {
+    if (totalBar) totalBar.style.display = 'none';
+  }
+}
+
+/* Professional & Fun Transparent Pricing Renderer */
 function renderPricingGrid() {
   const container = document.getElementById('pricing-grid');
   if (!container || !CANDID_DATA?.packages) return;
 
-  container.innerHTML = CANDID_DATA.packages.map(p => `
-    <article class="pricing-item-card ${p.featured ? 'popular' : ''}">
-      ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
-      
-      <div class="pricing-header-box">
-        <span class="plan-category-tag">${p.capacity}</span>
-        <h3 class="plan-title">${p.name}</h3>
-      </div>
-      
-      <div class="plan-price-box">
-        <span class="plan-amount">${p.price}</span>
-        <span class="plan-duration">/ ${p.duration}</span>
-      </div>
+  container.innerHTML = CANDID_DATA.packages.map(p => {
+    // Calculate discounted bundle price if bundle mode active
+    let rawNum = parseInt(p.price.replace(/[^0-9]/g, ''), 10);
+    let displayPrice = p.price;
+    let durationTag = p.duration;
 
-      <ul class="plan-list">
-        ${p.features.map(f => `
-          <li>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span>${f}</span>
-          </li>
-        `).join('')}
-      </ul>
+    if (isBundleMode) {
+      let bundlePerShoot = Math.round(rawNum * 0.8); // 20% discount
+      displayPrice = `₹${bundlePerShoot.toLocaleString()}`;
+      durationTag = `per shoot (3-shoot pass)`;
+    }
 
-      <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black btn-block" style="${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''}">
-        <span>Book ${p.name}</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-      </a>
-    </article>
-  `).join('');
+    return `
+      <article class="pricing-item-card ${p.featured ? 'popular' : ''}">
+        ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
+        
+        <div class="pricing-header-box">
+          <span class="plan-category-tag">${p.capacity}</span>
+          <h3 class="plan-title">${p.name}</h3>
+        </div>
+        
+        <div class="plan-price-box">
+          <span class="plan-amount">${displayPrice}</span>
+          <span class="plan-duration">/ ${durationTag}</span>
+        </div>
+
+        <ul class="plan-list">
+          ${p.features.map(f => `
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>${f}</span>
+            </li>
+          `).join('')}
+        </ul>
+
+        <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black btn-block" style="${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''}">
+          <span>Book ${p.name}</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </article>
+    `;
+  }).join('');
 }
 
 function selectPackageForBooking(name) {

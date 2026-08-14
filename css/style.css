@@ -619,8 +619,79 @@ img {
 }
 
 /* ==========================================================================
-   EXACT CORRECT TRANSPARENT PRICING DESIGN (MATCHING CANDID STUDIOS 1-TO-1)
+   PROFESSIONAL & FUN INTERACTIVE TRANSPARENT PRICING
    ========================================================================== */
+
+.pricing-toggle-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 40px;
+}
+
+.toggle-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  transition: var(--transition);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-label.active {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.save-badge {
+  background: #F8E776;
+  color: #141414;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing-toggle-btn {
+  width: 48px;
+  height: 26px;
+  background: var(--bg-warm-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pricing-toggle-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.toggle-slider {
+  width: 20px;
+  height: 20px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.pricing-toggle-btn.active .toggle-slider {
+  transform: translateX(21px);
+}
 
 .pricing-item-card {
   background: var(--bg-surface);
@@ -636,7 +707,7 @@ img {
 }
 
 .pricing-item-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1.01);
   box-shadow: var(--shadow-lg);
   border-color: var(--color-accent);
 }
@@ -715,6 +786,7 @@ img {
   font-weight: 700;
   line-height: 1;
   color: var(--color-accent);
+  transition: transform 0.2s ease;
 }
 
 .pricing-item-card.popular .plan-amount {
@@ -758,6 +830,110 @@ img {
 .plan-list li svg {
   flex-shrink: 0;
   margin-top: 3px;
+}
+
+/* Fun Add-ons Calculator Bar */
+.fun-addons-wrapper {
+  margin-top: 56px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  box-shadow: var(--shadow-sm);
+}
+
+.addons-header {
+  margin-bottom: 20px;
+}
+
+.addons-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.addons-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.addons-header p {
+  font-size: 0.86rem;
+  color: var(--color-muted);
+}
+
+.addons-pills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.addon-pill-btn {
+  background: var(--bg-warm-primary);
+  border: 1.5px solid var(--border-color);
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.addon-pill-btn:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.addon-pill-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(201, 106, 75, 0.25);
+}
+
+.addon-icon {
+  font-size: 1rem;
+}
+
+.addon-price {
+  font-weight: 700;
+  font-size: 0.78rem;
+  opacity: 0.9;
+}
+
+.addons-total-bar {
+  background: var(--bg-warm-secondary);
+  border: 1px solid var(--border-color);
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: fadeIn 0.3s ease;
+}
+
+.total-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+}
+
+.total-info strong {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--color-accent);
 }
 
 /* Sections Base */
