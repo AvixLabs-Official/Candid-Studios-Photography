@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
 });
 
-/* Exact Gallery Carousel (Matching gallery demo.mp4 video 1-to-1) */
+/* Exact Seamless Infinite Gallery Carousel (Matching gallery demo.mp4 video 1-to-1) */
 function initGalleryCarousel() {
   const track = document.getElementById('gallery-carousel-track');
   if (!track) return;
@@ -28,39 +28,54 @@ function initGalleryCarousel() {
   const cards = Array.from(track.children);
   if (cards.length === 0) return;
 
-  let activeIndex = 1; // Start with second card in center
+  const totalOriginal = cards.length / 2; // 6 cards per set
+  let activeIndex = 1;
 
-  function updateCarouselState() {
+  function updateCarouselState(enableTransition = true) {
+    if (enableTransition) {
+      track.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
+    } else {
+      track.style.transition = 'none';
+    }
+
     cards.forEach((card, idx) => {
-      if (idx === activeIndex) {
+      // Highlight matching centered card
+      const normalizedIdx = idx % totalOriginal;
+      const normalizedActive = activeIndex % totalOriginal;
+      if (normalizedIdx === normalizedActive && (idx === activeIndex || idx === activeIndex + totalOriginal)) {
         card.classList.add('center-focus');
       } else {
         card.classList.remove('center-focus');
       }
     });
 
-    // Calculate translation offset so activeIndex card is exactly centered in viewport
     const viewportWidth = window.innerWidth;
     const cardWidth = 320;
     const cardGap = 36;
     const itemFullWidth = cardWidth + cardGap;
     
-    // Offset calculation
     const centerOffset = (viewportWidth / 2) - (cardWidth / 2) - (activeIndex * itemFullWidth);
     track.style.transform = `translateX(${centerOffset}px)`;
   }
 
   // Initial positioning
-  updateCarouselState();
+  updateCarouselState(false);
 
-  // Auto transition every 2.4 seconds (matching video frame timing)
+  // Auto transition every 2.4 seconds with infinite wrap
   setInterval(() => {
-    activeIndex = (activeIndex + 1) % cards.length;
-    updateCarouselState();
+    activeIndex++;
+    updateCarouselState(true);
+
+    // When we finish set 1 and cross into set 2, reset activeIndex seamlessly without visual jump
+    if (activeIndex >= totalOriginal + 1) {
+      setTimeout(() => {
+        activeIndex = 1;
+        updateCarouselState(false);
+      }, 820);
+    }
   }, 2400);
 
-  // Recalculate on window resize
-  window.addEventListener('resize', updateCarouselState);
+  window.addEventListener('resize', () => updateCarouselState(false));
 }
 
 /* Hero Polaroid Automated Image Slideshow (Exact behavior from video) */
