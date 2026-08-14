@@ -1,5 +1,5 @@
 /* ==========================================================================
-   A P STUDIO NOTTING HILL — DATA STORE
+   A P STUDIO NOTTING HILL — DATA STORE (PRICING IN INDIAN RUPEES ₹)
    ========================================================================== */
 
 const CANDID_DATA = {
@@ -23,7 +23,7 @@ const CANDID_DATA = {
     badge: "NOTTING HILL, WEST LONDON",
     heading: "A self portrait studio in London where the photographer is you.",
     subheading: "Take control of your story.",
-    priceTag: "Sessions from £75.",
+    priceTag: "Sessions from ₹1,499.",
     cta: "BOOK A SESSION"
   },
 
@@ -93,7 +93,7 @@ const CANDID_DATA = {
     {
       id: "solo",
       name: "Solo Self-Portrait",
-      price: "£75",
+      price: "₹1,499",
       duration: "45 MINS",
       capacity: "1 PERSON",
       featured: false,
@@ -110,7 +110,7 @@ const CANDID_DATA = {
     {
       id: "duo",
       name: "Duo & Couples Experience",
-      price: "£95",
+      price: "₹2,499",
       duration: "45 MINS",
       capacity: "2-4 PEOPLE",
       featured: true,
@@ -127,7 +127,7 @@ const CANDID_DATA = {
     {
       id: "branding",
       name: "Branding & LinkedIn Headshots",
-      price: "£120",
+      price: "₹3,499",
       duration: "60 MINS",
       capacity: "1 PERSON",
       featured: false,
@@ -144,7 +144,7 @@ const CANDID_DATA = {
     {
       id: "group",
       name: "Group & Hen Party",
-      price: "£180",
+      price: "₹4,999",
       duration: "75 MINS",
       capacity: "UP TO 8 GUESTS",
       featured: false,
@@ -166,13 +166,13 @@ const CANDID_DATA = {
     tiers: [
       {
         name: "The Express Team",
-        price: "From £465",
+        price: "From ₹14,999",
         teamSize: "UP TO 10 EMPLOYEES",
         desc: "Half-day private studio suite booking in Notting Hill. Each team member gets 15 minutes of private self-portrait time with live confidence preview."
       },
       {
         name: "The Bespoke Studio Hire",
-        price: "From £850",
+        price: "From ₹24,999",
         teamSize: "UP TO 25 EMPLOYEES",
         desc: "Full-day studio suite hire with dedicated studio host, light refreshments, multi-backdrop sets, and same-day delivery of all high-res files."
       },
@@ -180,7 +180,7 @@ const CANDID_DATA = {
         name: "On-Site Pop-Up Studio",
         price: "Custom Quote",
         teamSize: "25+ EMPLOYEES",
-        desc: "We bring our studio strobe lights, backdrop system, and wireless trigger tech straight to your corporate offices in London."
+        desc: "We bring our studio strobe lights, backdrop system, and wireless trigger tech straight to your corporate offices."
       }
     ]
   },
