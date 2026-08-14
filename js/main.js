@@ -2,28 +2,28 @@
    CANDID STUDIOS NOTTING HILL — MAIN JAVASCRIPT ORCHESTRATOR
    ========================================================================== */
 
-let currentBackdrop = 'ivory';
-let clickCount = 0;
+let activeColor = 'ivory';
+let clickTotal = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
-  initHeader();
-  renderHowItWorks();
-  renderBackdrops();
-  renderPackages();
-  renderCorporate();
-  renderGallery();
-  renderReviews();
-  renderFaqs();
-  initSimulator();
+  initHeaderScroll();
+  renderHowItWorksGrid();
+  renderBackdropsGrid();
+  renderPricingGrid();
+  renderCorporateGrid();
+  renderGalleryGrid();
+  renderReviewsGrid();
+  renderFaqsAccordion();
+  initShutterSimulator();
   initBookingForm();
-  initMobileMenu();
+  initMobileDrawer();
 });
 
-/* Header Scroll & Active ScrollSpy */
-function initHeader() {
+/* Header Scroll Transition */
+function initHeaderScroll() {
   const header = document.getElementById('candid-header');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
+    if (window.scrollY > 20) {
       header?.classList.add('scrolled');
     } else {
       header?.classList.remove('scrolled');
@@ -31,80 +31,80 @@ function initHeader() {
   });
 }
 
-/* Mobile Drawer Toggle */
-function initMobileMenu() {
-  const toggle = document.getElementById('mobile-menu-toggle');
-  const overlay = document.getElementById('mobile-nav-overlay');
-  
-  toggle?.addEventListener('click', () => {
-    overlay?.classList.toggle('active');
+/* Mobile Navigation Toggle */
+function initMobileDrawer() {
+  const toggleBtn = document.getElementById('mobile-toggle-btn');
+  const drawer = document.getElementById('mobile-drawer');
+
+  toggleBtn?.addEventListener('click', () => {
+    drawer?.classList.toggle('active');
   });
 
-  document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+  document.querySelectorAll('.mobile-drawer a').forEach(link => {
     link.addEventListener('click', () => {
-      overlay?.classList.remove('active');
+      drawer?.classList.remove('active');
     });
   });
 }
 
-/* Render How It Works */
-function renderHowItWorks() {
-  const container = document.getElementById('steps-container');
+/* Render How It Works Grid */
+function renderHowItWorksGrid() {
+  const container = document.getElementById('how-it-works-grid');
   if (!container || !CANDID_DATA?.howItWorks) return;
 
   container.innerHTML = CANDID_DATA.howItWorks.map(step => `
-    <article class="step-card">
-      <span class="step-num">${step.step}</span>
-      <h3 class="step-title">${step.title}</h3>
-      <span class="step-subtitle">${step.subtitle}</span>
-      <p class="step-desc">${step.desc}</p>
+    <article class="step-item-card">
+      <div class="step-number">${step.step}</div>
+      <h3 class="step-heading">${step.title}</h3>
+      <span class="step-sub">${step.subtitle}</span>
+      <p class="step-body">${step.desc}</p>
     </article>
   `).join('');
 }
 
-/* Render Backdrop Sets */
-function renderBackdrops() {
-  const container = document.getElementById('backdrops-container');
+/* Render Backdrops Grid */
+function renderBackdropsGrid() {
+  const container = document.getElementById('backdrops-grid');
   if (!container || !CANDID_DATA?.backdrops) return;
 
   container.innerHTML = CANDID_DATA.backdrops.map(b => `
-    <article class="backdrop-card">
-      <div class="backdrop-img-box">
+    <article class="backdrop-item-card">
+      <div class="backdrop-thumb">
         <img src="${b.sampleImage}" alt="${b.name}" loading="lazy">
-        <span class="backdrop-color-pill">
-          <span style="width:12px; height:12px; border-radius:50%; background:${b.hex}; border:1px solid #CCC;"></span>
+        <span class="color-badge">
+          <span style="width:10px; height:10px; border-radius:50%; background:${b.hex}; border:1px solid #CCCCCC;"></span>
           ${b.name}
         </span>
       </div>
-      <div class="backdrop-body">
-        <h3 class="backdrop-name">${b.name}</h3>
-        <span class="backdrop-tag">${b.tag}</span>
-        <p class="backdrop-desc">${b.desc}</p>
-        <button onclick="setSimBackdrop('${b.id}')" class="btn-candid-outline" style="margin-top:16px; width:100%; justify-content:center; padding:8px 16px; font-size:0.78rem;">
-          Try in Simulator →
+      <div class="backdrop-info">
+        <h3 class="backdrop-title">${b.name}</h3>
+        <span class="backdrop-vibe">${b.tag}</span>
+        <p class="backdrop-text">${b.desc}</p>
+        <button onclick="switchBackdrop('${b.id}')" class="btn-candid-outline" style="margin-top:16px; width:100%; justify-content:center; padding:8px 14px; font-size:0.78rem;">
+          Try in Stage →
         </button>
       </div>
     </article>
   `).join('');
 }
 
-/* Render Pricing Packages */
-function renderPackages() {
-  const container = document.getElementById('pricing-container');
+/* Render Pricing Grid */
+function renderPricingGrid() {
+  const container = document.getElementById('pricing-grid');
   if (!container || !CANDID_DATA?.packages) return;
 
   container.innerHTML = CANDID_DATA.packages.map(p => `
-    <article class="pricing-card ${p.featured ? 'featured' : ''}">
-      ${p.featured ? `<span class="pricing-badge">${p.tag}</span>` : ''}
-      <h3 class="pricing-name">${p.name}</h3>
+    <article class="pricing-item-card ${p.featured ? 'popular' : ''}">
+      ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
+      <h3 class="plan-title">${p.name}</h3>
       <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'};">${p.capacity}</span>
       
-      <div class="pricing-price-wrap">
-        <span class="pricing-price">${p.price}</span>
-        <span class="pricing-meta">/ ${p.duration}</span>
+      <div class="plan-price-box">
+        <span class="plan-amount">${p.price}</span>
+        <span class="plan-duration">/ ${p.duration}</span>
       </div>
 
-      <ul class="pricing-features-list">
+      <ul class="plan-list">
         ${p.features.map(f => `
           <li>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -113,31 +113,31 @@ function renderPackages() {
         `).join('')}
       </ul>
 
-      <a href="#booking" onclick="preselectPackage('${p.name}')" class="${p.featured ? 'btn-candid-primary' : 'btn-candid-dark'}" style="margin-top:auto; justify-content:center;">
+      <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black" style="margin-top:auto; justify-content:center; ${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''}">
         <span>Book ${p.name}</span>
-        <span class="cta-arrow">→</span>
+        <span class="arrow">→</span>
       </a>
     </article>
   `).join('');
 }
 
-function preselectPackage(packageName) {
+function selectPackageForBooking(name) {
   const selectEl = document.getElementById('booking-package');
-  if (selectEl) selectEl.value = packageName;
+  if (selectEl) selectEl.value = name;
 }
 
 /* Render Corporate Headshots */
-function renderCorporate() {
-  const container = document.getElementById('corporate-container');
+function renderCorporateGrid() {
+  const container = document.getElementById('corporate-grid');
   if (!container || !CANDID_DATA?.corporate?.tiers) return;
 
   container.innerHTML = CANDID_DATA.corporate.tiers.map(t => `
-    <article class="corp-card">
-      <h3 class="corp-name">${t.name}</h3>
-      <div class="corp-price">${t.price}</div>
-      <div class="corp-size">${t.teamSize}</div>
-      <p class="corp-desc">${t.desc}</p>
-      <a href="#booking" onclick="preselectPackage('Corporate - ${t.name}')" class="btn-candid-outline" style="margin-top:20px; color:#FAF7F2; border-color:rgba(250,247,242,0.3); width:100%; justify-content:center;">
+    <article class="corp-item-card">
+      <h3 class="corp-title">${t.name}</h3>
+      <div class="corp-rate">${t.price}</div>
+      <div class="corp-limit">${t.teamSize}</div>
+      <p class="corp-text">${t.desc}</p>
+      <a href="#booking" onclick="selectPackageForBooking('Corporate - ${t.name}')" class="btn-candid-outline" style="margin-top:18px; color:#FAF7F2; border-color:rgba(250,247,242,0.3); width:100%; justify-content:center;">
         <span>Inquire for Team →</span>
       </a>
     </article>
@@ -145,92 +145,92 @@ function renderCorporate() {
 }
 
 /* Render Gallery */
-function renderGallery() {
-  const container = document.getElementById('gallery-container');
+function renderGalleryGrid() {
+  const container = document.getElementById('gallery-grid');
   if (!container || !CANDID_DATA?.gallery) return;
 
   container.innerHTML = CANDID_DATA.gallery.map(g => `
-    <article class="gallery-card">
+    <article class="gallery-item-card">
       <img src="${g.image}" alt="${g.title}" loading="lazy">
-      <div class="gallery-overlay">
-        <span class="gallery-meta">${g.tag} • ${g.category}</span>
-        <h4 class="gallery-title">${g.title}</h4>
+      <div class="gallery-card-overlay">
+        <span class="gallery-card-meta">${g.tag} • ${g.category}</span>
+        <h4 class="gallery-card-title">${g.title}</h4>
       </div>
     </article>
   `).join('');
 }
 
 /* Render Reviews */
-function renderReviews() {
-  const container = document.getElementById('reviews-container');
+function renderReviewsGrid() {
+  const container = document.getElementById('reviews-grid');
   if (!container || !CANDID_DATA?.reviews) return;
 
   container.innerHTML = CANDID_DATA.reviews.map(r => `
-    <article class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-quote">"${r.quote}"</p>
-      <div class="review-author-box">
+    <article class="review-item-card">
+      <div class="star-rating">★★★★★</div>
+      <p class="quote-text">"${r.quote}"</p>
+      <div class="author-footer">
         <div>
-          <strong class="review-author">${r.author}</strong>
-          <span style="display:block; font-size:0.78rem; color:var(--color-muted);">${r.location}</span>
+          <strong class="author-name">${r.author}</strong>
+          <span style="display:block; font-size:0.76rem; color:var(--color-muted);">${r.location}</span>
         </div>
-        <span class="review-session">${r.session}</span>
+        <span class="session-badge">${r.session}</span>
       </div>
     </article>
   `).join('');
 }
 
-/* Render FAQ Accordions */
-function renderFaqs() {
-  const container = document.getElementById('faq-container');
+/* Render FAQs Accordion */
+function renderFaqsAccordion() {
+  const container = document.getElementById('faq-accordion');
   if (!container || !CANDID_DATA?.faqs) return;
 
-  container.innerHTML = CANDID_DATA.faqs.map((f, index) => `
-    <article class="faq-item ${index === 0 ? 'active' : ''}">
-      <div class="faq-question" onclick="toggleFaq(this)">
+  container.innerHTML = CANDID_DATA.faqs.map((f, i) => `
+    <article class="accordion-item ${i === 0 ? 'active' : ''}">
+      <div class="accordion-question" onclick="toggleAccordion(this)">
         <span>${f.question}</span>
-        <span class="faq-icon">+</span>
+        <span class="accordion-toggle">+</span>
       </div>
-      <div class="faq-answer">
+      <div class="accordion-answer">
         <p>${f.answer}</p>
       </div>
     </article>
   `).join('');
 }
 
-function toggleFaq(el) {
-  const item = el.closest('.faq-item');
+function toggleAccordion(el) {
+  const item = el.closest('.accordion-item');
   item?.classList.toggle('active');
 }
 
 /* Interactive Shutter Clicker Simulator Widget */
-function initSimulator() {
-  const triggerBtn = document.getElementById('sim-trigger-btn');
-  if (!triggerBtn) return;
+function initShutterSimulator() {
+  const btn = document.getElementById('shutter-trigger');
+  if (!btn) return;
 
-  triggerBtn.addEventListener('click', triggerSimSnap);
+  btn.addEventListener('click', triggerShutterClick);
 }
 
-function triggerSimSnap() {
-  clickCount++;
-  const countEl = document.getElementById('sim-click-count');
-  if (countEl) countEl.textContent = clickCount;
+function triggerShutterClick() {
+  clickTotal++;
+  const counterEl = document.getElementById('click-counter');
+  if (counterEl) counterEl.textContent = clickTotal;
 
-  // Flash Overlay
-  const flashEl = document.getElementById('sim-flash-screen');
-  if (flashEl) {
-    flashEl.classList.add('flashing');
-    setTimeout(() => flashEl.classList.remove('flashing'), 100);
+  // Flash overlay screen animation
+  const flash = document.getElementById('flash-overlay');
+  if (flash) {
+    flash.classList.add('flashing');
+    setTimeout(() => flash.classList.remove('flashing'), 100);
   }
 
-  // Audio Click Sound Effect
+  // Camera Shutter Audio FX
   try {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.type = 'sine';
-    osc.frequency.setValueAtTime(800, ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.04);
+    osc.frequency.setValueAtTime(750, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.04);
     gain.gain.setValueAtTime(0.3, ctx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.04);
     osc.connect(gain);
@@ -239,40 +239,36 @@ function triggerSimSnap() {
     osc.stop(ctx.currentTime + 0.05);
   } catch (e) {}
 
-  // Cycle image pose sample inside stage
-  const bData = CANDID_DATA.backdrops.find(b => b.id === currentBackdrop);
-  const stageImg = document.getElementById('sim-stage-img');
-  if (stageImg && bData) {
-    stageImg.style.transform = 'scale(0.96)';
+  // Scale image slightly
+  const activeImg = document.getElementById('stage-active-img');
+  if (activeImg) {
+    activeImg.style.transform = 'scale(0.97)';
     setTimeout(() => {
-      stageImg.style.transform = 'scale(1)';
-    }, 150);
+      activeImg.style.transform = 'scale(1)';
+    }, 140);
   }
 }
 
-function setSimBackdrop(id) {
-  currentBackdrop = id;
+function switchBackdrop(id) {
+  activeColor = id;
   const bData = CANDID_DATA.backdrops.find(b => b.id === id);
   if (!bData) return;
 
-  const stageView = document.getElementById('sim-stage-view');
-  const stageImg = document.getElementById('sim-stage-img');
-  const labelEl = document.getElementById('sim-backdrop-label');
+  const stageImg = document.getElementById('stage-active-img');
+  const labelEl = document.getElementById('active-set-title');
 
-  if (stageView) stageView.style.background = bData.hex;
   if (stageImg) stageImg.src = bData.sampleImage;
-  if (labelEl) labelEl.textContent = bData.name;
+  if (labelEl) labelEl.textContent = bData.name + ' Backdrop Set';
 
-  // Update active swatch
-  document.querySelectorAll('.backdrop-swatch').forEach(swatch => {
-    if (swatch.getAttribute('data-id') === id) {
+  document.querySelectorAll('.swatch').forEach(swatch => {
+    if (swatch.getAttribute('data-color') === id) {
       swatch.classList.add('active');
     } else {
       swatch.classList.remove('active');
     }
   });
 
-  triggerSimSnap();
+  triggerShutterClick();
 }
 
 /* Reservation Booking Form Handler */
@@ -306,14 +302,14 @@ function initBookingForm() {
 
       const data = await res.json();
       if (data.success) {
-        triggerSimSnap();
-        alert(`📸 SUCCESS!\n${data.message}`);
+        triggerShutterClick();
+        alert(`📸 BOOKING RESERVED!\n${data.message}`);
         form.reset();
       } else {
-        alert(`Note: ${data.message || 'Please check your booking information.'}`);
+        alert(`Note: ${data.message || 'Please verify your information.'}`);
       }
     } catch (err) {
-      alert(`Session Reserved! Thank you ${name}, your booking request for ${packageType} has been submitted. Our studio host will contact you shortly at ${email}.`);
+      alert(`Session Reserved! Thank you ${name}, your booking for ${packageType} has been received. Our Notting Hill studio host will email your confirmation shortly at ${email}.`);
       form.reset();
     } finally {
       if (btn) btn.disabled = false;
