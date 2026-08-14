@@ -1113,6 +1113,10 @@ img {
   border: 1px solid var(--border-dark);
   border-radius: var(--radius-md);
   padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .corp-title {
@@ -1120,6 +1124,7 @@ img {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 6px;
+  line-height: 1.25;
 }
 
 .corp-rate {
@@ -1142,6 +1147,16 @@ img {
   font-size: 0.86rem;
   color: rgba(250, 247, 242, 0.8);
   line-height: 1.55;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.corp-item-card a.btn-candid-outline {
+  margin-top: auto;
+  color: #FAF7F2;
+  border-color: rgba(250, 247, 242, 0.3);
+  width: 100%;
+  justify-content: center;
 }
 
 /* RetroBooth Card */

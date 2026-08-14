@@ -253,7 +253,7 @@ function renderCorporateGrid() {
       <div class="corp-rate">${t.price}</div>
       <div class="corp-limit">${t.teamSize}</div>
       <p class="corp-text">${t.desc}</p>
-      <a href="#booking" onclick="selectPackageForBooking('Corporate - ${t.name}')" class="btn-candid-outline" style="margin-top:18px; color:#FAF7F2; border-color:rgba(250,247,242,0.3); width:100%; justify-content:center;">
+      <a href="#booking" onclick="selectPackageForBooking('Corporate - ${t.name}')" class="btn-candid-outline">
         <span>Inquire for Team</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
