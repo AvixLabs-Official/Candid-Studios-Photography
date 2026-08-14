@@ -662,17 +662,15 @@ img {
 
 .childish-kicker {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-size: 0.74rem;
+  font-weight: 700;
   letter-spacing: 0.14em;
-  color: #141414;
-  background: #FFE5EC;
-  border: 2px solid #141414;
-  padding: 6px 16px;
-  border-radius: var(--radius-pill);
-  display: inline-block;
-  margin-bottom: 16px;
-  box-shadow: 3px 3px 0px #141414;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .childish-heading {

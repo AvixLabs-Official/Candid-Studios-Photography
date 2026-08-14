@@ -190,7 +190,7 @@ function renderBackdropsGrid() {
   `).join('');
 }
 
-/* Switch Childish Pricing Duration Level */
+/* Switch Pricing Duration Level */
 function switchChildishDuration(btn, mode) {
   document.querySelectorAll('.candy-pill-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -198,7 +198,7 @@ function switchChildishDuration(btn, mode) {
   renderChildishPricingGrid();
 }
 
-/* Toggle Childish Sticker Goodies */
+/* Toggle Sticker Add-ons */
 function toggleChildishSticker(btn, price) {
   btn.classList.toggle('active');
   if (btn.classList.contains('active')) {
@@ -218,60 +218,49 @@ function toggleChildishSticker(btn, price) {
   }
 }
 
-/* Unique Playful Childish Doodle Pricing Renderer */
+/* Professional & Clean Vector SVG Pricing Renderer */
 function renderChildishPricingGrid() {
   const container = document.getElementById('pricing-grid');
   if (!container || !CANDID_DATA?.packages) return;
 
-  const playfulThemes = [
-    { cardBg: '#FFF9E6', badgeBg: '#FFD966', badgeIcon: '⭐', accent: '#E08000', tag: 'POPULAR SOLO!' },
-    { cardBg: '#FFE5EC', badgeBg: '#FF85A1', badgeIcon: '👶', accent: '#D81B60', tag: 'MOMMY & BABY!' },
-    { cardBg: '#E8F8F5', badgeBg: '#76D7C4', badgeIcon: '👗', accent: '#117A65', tag: 'FASHION STAR!' },
-    { cardBg: '#EBF5FB', badgeBg: '#85C1E9', badgeIcon: '💍', accent: '#1F618D', tag: 'GRAND WEDDING!' }
-  ];
-
-  container.innerHTML = CANDID_DATA.packages.map((p, idx) => {
-    const theme = playfulThemes[idx % playfulThemes.length];
+  container.innerHTML = CANDID_DATA.packages.map(p => {
     let rawNum = parseInt(p.price.replace(/[^0-9]/g, ''), 10);
     let finalPrice = p.price;
     let durationLabel = p.duration;
 
     if (childishDurationMode === 'deluxe') {
-      let deluxeNum = Math.round(rawNum * 1.55);
+      let deluxeNum = Math.round(rawNum * 1.5);
       finalPrice = `₹${deluxeNum.toLocaleString()}`;
-      durationLabel = 'Full Party (120 Mins)';
+      durationLabel = '120 Mins Extended';
     }
 
     return `
-      <article class="childish-card ${p.featured ? 'super-featured' : ''}" style="background-color: ${theme.cardBg}; border-color: #141414;">
+      <article class="pricing-item-card ${p.featured ? 'popular' : ''}">
+        ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
         
-        <!-- Wobbly Comic Badge -->
-        <div class="childish-card-badge" style="background-color: ${theme.badgeBg};">
-          <span>${theme.badgeIcon} ${p.tag || theme.tag}</span>
+        <div class="pricing-header-box">
+          <span class="plan-category-tag">${p.capacity}</span>
+          <h3 class="plan-title">${p.name}</h3>
+        </div>
+        
+        <div class="plan-price-box">
+          <span class="plan-amount">${finalPrice}</span>
+          <span class="plan-duration">/ ${durationLabel}</span>
         </div>
 
-        <div class="childish-card-header">
-          <span class="childish-card-sub" style="color: ${theme.accent};">${p.capacity}</span>
-          <h3 class="childish-card-title">${p.name}</h3>
-        </div>
-
-        <div class="childish-price-box">
-          <span class="childish-amount" style="color: ${theme.accent};">${finalPrice}</span>
-          <span class="childish-duration">/ ${durationLabel}</span>
-        </div>
-
-        <!-- Fun Doodle Bullet List -->
-        <ul class="childish-features-list">
+        <!-- Clean SVG Checkmark List -->
+        <ul class="plan-list">
           ${p.features.map(f => `
             <li>
-              <span class="doodle-bullet">🎨</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
               <span>${f}</span>
             </li>
           `).join('')}
         </ul>
 
-        <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-childish-card-action" style="background-color: #141414; color: #FFFFFF;">
-          <span>Book This Shoot! 🚀</span>
+        <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black btn-block" style="${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''}">
+          <span>Book ${p.name}</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
       </article>
     `;
