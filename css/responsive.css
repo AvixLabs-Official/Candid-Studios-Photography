@@ -1,0 +1,100 @@
+/* ==========================================================================
+   CANDID STUDIOS NOTTING HILL — RESPONSIVE STYLES
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .steps-grid,
+  .backdrops-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .candid-nav-links {
+    gap: 16px;
+  }
+
+  .candid-nav-links a {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .candid-nav-desktop {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    cursor: pointer;
+    color: var(--color-text);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .corporate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .retrobooth-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .announcement-bar {
+    font-size: 0.68rem;
+    padding: 8px 12px;
+  }
+
+  .candid-header {
+    height: 76px;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .steps-grid,
+  .backdrops-grid,
+  .pricing-grid,
+  .gallery-grid-3col,
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sim-stage-view {
+    height: 300px;
+  }
+
+  .corporate-box,
+  .booking-container-box,
+  .retrobooth-grid {
+    padding: 28px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

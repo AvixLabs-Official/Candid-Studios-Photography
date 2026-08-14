@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self Portrait Studio London | Candid Studios Notting Hill</title>
+  <meta name="description" content="London's premier self portrait photography studio in Notting Hill. Starting at £75. Private photographer-free studio with professional lighting and 250+ images same day.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+     TOP ANNOUNCEMENT BAR
+     ========================================================================== -->
+  <div class="announcement-bar">
+    <span>☀️ AUGUST SUMMER SPECIAL: 30% OFF ALL 45-MIN SESSIONS WITH CODE 'SUMMER30'</span>
+    <a href="#booking">Book Your Slot →</a>
+  </div>
+
+  <!-- ==========================================================================
+     HEADER & NAVIGATION (STICKY WARM EDITORIAL HEADER)
+     ========================================================================== -->
+  <header class="candid-header" id="candid-header">
+    <div class="container">
+      <div class="candid-header-inner">
+        <!-- Logo -->
+        <a href="#home" class="candid-logo">
+          <div class="candid-logo-emblem">CS</div>
+          <div class="candid-logo-text-group">
+            <span class="candid-logo-main">CANDID</span>
+            <span class="candid-logo-sub">NOTTING HILL, LONDON</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="candid-nav-desktop">
+          <ul class="candid-nav-links">
+            <li><a href="#home" class="active">HOME</a></li>
+            <li><a href="#concept">HOW IT WORKS</a></li>
+            <li><a href="#backdrops">BACKDROPS</a></li>
+            <li><a href="#pricing">PACKAGES</a></li>
+            <li><a href="#corporate">CORPORATE</a></li>
+            <li><a href="#retrobooth">RETROBOOTH</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li><a href="#reviews">REVIEWS</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#booking">LOCATION</a></li>
+          </ul>
+        </nav>
+
+        <!-- Header Primary Action CTA -->
+        <div class="header-actions">
+          <a href="#booking" class="btn-candid-primary">
+            <span>Book Studio</span>
+            <span class="cta-arrow">→</span>
+          </a>
+
+          <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay">
+    <ul class="mobile-nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#concept">How It Works</a></li>
+      <li><a href="#backdrops">Backdrops</a></li>
+      <li><a href="#pricing">Packages & Rates</a></li>
+      <li><a href="#corporate">Corporate Headshots</a></li>
+      <li><a href="#retrobooth">RetroBooth</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#booking">Book & Location</a></li>
+    </ul>
+  </div>
+
+  <!-- ==========================================================================
+     HERO SECTION (#home) — WITH INTERACTIVE SHUTTER CLICKER SIMULATOR
+     ========================================================================== -->
+  <section class="candid-hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <!-- Hero Text & Value Proposition -->
+        <div class="hero-content">
+          <div class="hero-eyebrow-badge">
+            <span class="dot"></span>
+            <span>LONDON'S PREMIER SELF-PORTRAIT STUDIO • NOTTING HILL</span>
+          </div>
+
+          <h1 class="hero-title">You Take The Shots.<br>We Supply The Studio.</h1>
+
+          <p class="hero-subtext">
+            Step into a private studio equipped with professional lighting, custom backdrop color sets, and a wireless remote clicker. No photographer watching — just pure, uninhibited self-expression. Receive 250+ high-res images same day.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#booking" class="btn-candid-primary">
+              <span>Book Your 45-Min Session (£75)</span>
+              <span class="cta-arrow">→</span>
+            </a>
+            <a href="#concept" class="btn-candid-outline">
+              <span>Explore How It Works ↓</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-bar">
+            <div class="trust-rating-stars">★★★★★</div>
+            <div class="trust-text">330+ Five-Star Google & Trustpilot Reviews in London</div>
+          </div>
+        </div>
+
+        <!-- Interactive Shutter Clicker Simulator Widget -->
+        <div class="hero-simulator-card" id="clicker-simulator">
+          <div class="sim-screen-header">
+            <span class="sim-live-badge">
+              <span class="blink"></span>
+              STUDIO SUITE 01 • LIVE PREVIEW
+            </span>
+            <span style="font-size:0.75rem; font-weight:700; color:var(--color-muted);">
+              SHOTS TAKEN: <strong id="sim-click-count" style="color:var(--color-accent);">0</strong>
+            </span>
+          </div>
+
+          <!-- Stage Display Area -->
+          <div class="sim-stage-view" id="sim-stage-view">
+            <div class="sim-flash-screen" id="sim-flash-screen"></div>
+            <div class="sim-grid-lines"></div>
+            <img id="sim-stage-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80" alt="Self Portrait Preview">
+          </div>
+
+          <!-- Controls Bar -->
+          <div class="sim-controls-bar">
+            <button class="sim-clicker-btn" id="sim-trigger-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg>
+              <span>PRESS CLICKER 📸</span>
+            </button>
+
+            <div class="sim-backdrop-selector">
+              <span style="font-size:0.7rem; font-weight:700; text-transform:uppercase; color:var(--color-muted); margin-right:4px;">SET:</span>
+              <div class="backdrop-swatch active" data-id="ivory" style="background:#F5F0E6;" onclick="setSimBackdrop('ivory')" title="Warm Ivory"></div>
+              <div class="backdrop-swatch" data-id="charcoal" style="background:#1A1A18;" onclick="setSimBackdrop('charcoal')" title="Midnight Charcoal"></div>
+              <div class="backdrop-swatch" data-id="crimson" style="background:#8B2626;" onclick="setSimBackdrop('crimson')" title="Editorial Crimson"></div>
+              <div class="backdrop-swatch" data-id="sage" style="background:#7A8B7B;" onclick="setSimBackdrop('sage')" title="Soft Sage"></div>
+            </div>
+          </div>
+          <span id="sim-backdrop-label" style="display:block; text-align:center; font-size:0.72rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-accent); margin-top:10px;">Warm Ivory Backdrop</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     HOW IT WORKS SECTION (#concept) — THE 4-STEP PROCESS
+     ========================================================================== -->
+  <section class="candid-section" id="concept" style="background:var(--bg-secondary);">
+    <div class="container">
+      <span class="section-eyebrow">THE CONCEPT</span>
+      <h2 class="section-title">How The Self-Portrait Studio Works</h2>
+      <p class="section-desc">Designed specifically for camera-shy individuals, creators, couples, and teams who want high-end professional photos without awkward small talk.</p>
+
+      <div class="steps-grid" id="steps-container">
+        <!-- Rendered dynamically by js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     BACKDROP COLOR SETS SECTION (#backdrops)
+     ========================================================================== -->
+  <section class="candid-section" id="backdrops">
+    <div class="container">
+      <span class="section-eyebrow">CURATED STUDIO SETS</span>
+      <h2 class="section-title">Pick Your Backdrop Vibe</h2>
+      <p class="section-desc">Our Notting Hill studio features 4 interchangeable backdrop color environments, each illuminated with professional softbox and beauty dish strobes.</p>
+
+      <div class="backdrops-grid" id="backdrops-container">
+        <!-- Rendered dynamically by js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     PACKAGES & PRICING SECTION (#pricing)
+     ========================================================================== -->
+  <section class="candid-section" id="pricing" style="background:var(--bg-secondary);">
+    <div class="container">
+      <span class="section-eyebrow">TRANSPARENT PRICING</span>
+      <h2 class="section-title">Session Packages & Rates</h2>
+      <p class="section-desc">Every session includes full private studio access, unlimited photos taken during your time slot, and same-day high-res digital gallery delivery.</p>
+
+      <div class="pricing-grid" id="pricing-container">
+        <!-- Rendered dynamically by js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     CORPORATE & TEAMS HEADSHOTS (#corporate)
+     ========================================================================== -->
+  <section class="candid-section" id="corporate">
+    <div class="container">
+      <div class="corporate-box">
+        <div class="corporate-header">
+          <span class="section-eyebrow" style="color:var(--color-gold);">FOR BUSINESS & CREATIVE TEAMS</span>
+          <h2 class="section-title" style="color:#FAF7F2; margin-bottom:12px;">Headshots Your Team Will Actually Love Putting On LinkedIn.</h2>
+          <p style="color:rgba(250,247,242,0.8); font-size:1.05rem;">Say goodbye to rigid corporate photoshoots. Candid Studios gives your employees complete privacy to take confidence-boosting headshots in Notting Hill or at your office location.</p>
+        </div>
+
+        <div class="corporate-grid" id="corporate-container">
+          <!-- Rendered dynamically by js/main.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     RETROBOOTH SECTION (#retrobooth)
+     ========================================================================== -->
+  <section class="candid-section" id="retrobooth" style="background:var(--bg-primary);">
+    <div class="container">
+      <div class="retrobooth-grid">
+        <div>
+          <span class="section-eyebrow">SPONTANEOUS & VINTAGE</span>
+          <h2 class="section-title">The Candid RetroBooth</h2>
+          <p class="section-desc">A vintage-inspired walk-in photo booth right inside our Westbourne Grove storefront. Pop in without booking for instant dual physical strip prints and animated digital GIFs.</p>
+          
+          <ul class="retrobooth-highlights">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Instant Dual Physical Strip Prints</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Digital Animated GIFs Delivered Directly to Phone</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Custom Date Stamp & Graphic Overlay</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Walk-in Hours: Tuesday – Sunday, 12pm – 6pm</span>
+            </li>
+          </ul>
+
+          <a href="#booking" class="btn-candid-primary">
+            <span>Add RetroBooth Prints to Session (£10)</span>
+            <span class="cta-arrow">→</span>
+          </a>
+        </div>
+
+        <div style="position:relative; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--border-color); box-shadow:var(--shadow-md); height:400px;">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1000&q=80" alt="Candid RetroBooth Notting Hill" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     VISUAL GALLERY SHOWCASE (#gallery)
+     ========================================================================== -->
+  <section class="candid-section" id="gallery" style="background:var(--bg-secondary);">
+    <div class="container">
+      <span class="section-eyebrow">PORTFOLIO</span>
+      <h2 class="section-title">Real Guests. Real Shots.</h2>
+      <p class="section-desc">A look inside shots taken by our guests using the remote clicker in our Notting Hill studio suite.</p>
+
+      <div class="gallery-grid-3col" id="gallery-container">
+        <!-- Rendered dynamically by js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     CUSTOMER REVIEWS & PRAISE (#reviews)
+     ========================================================================== -->
+  <section class="candid-section" id="reviews">
+    <div class="container">
+      <span class="section-eyebrow">LOVE FROM LONDON</span>
+      <h2 class="section-title">330+ Five-Star Reviews</h2>
+      <p class="section-desc">Hear why camera-shy creators, couples, and professionals rate Candid Studios as London's best photography experience.</p>
+
+      <div class="reviews-grid" id="reviews-container">
+        <!-- Rendered dynamically by js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FREQUENTLY ASKED QUESTIONS (#faq)
+     ========================================================================== -->
+  <section class="candid-section" id="faq" style="background:var(--bg-secondary);">
+    <div class="container">
+      <span class="section-eyebrow">QUESTIONS & ANSWERS</span>
+      <h2 class="section-title" style="text-align:center;">Everything You Need To Know</h2>
+      <p class="section-desc" style="text-align:center; margin:0 auto 16px;">Got questions about booking your Notting Hill studio session? We've got answers.</p>
+
+      <div class="faq-grid" id="faq-container">
+        <!-- Rendered dynamically by js/main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     RESERVATION BOOKING & LOCATION FORM (#booking)
+     ========================================================================== -->
+  <section class="candid-section" id="booking">
+    <div class="container">
+      <span class="section-eyebrow">RESERVE YOUR STUDIO SUITE</span>
+      <h2 class="section-title">Book Your Notting Hill Session</h2>
+      <p class="section-desc">Select your session package, preferred backdrop set, date, and time. Instant confirmation sent to your email.</p>
+
+      <div class="booking-container-box">
+        <div class="booking-grid">
+          
+          <!-- Booking Form -->
+          <form id="candid-booking-form">
+            <div class="form-group">
+              <label class="form-label" for="booking-name">Full Name *</label>
+              <input type="text" id="booking-name" class="form-input" placeholder="e.g. Eleanor Vance" required>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="form-group">
+                <label class="form-label" for="booking-email">Email Address *</label>
+                <input type="email" id="booking-email" class="form-input" placeholder="name@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="booking-phone">Phone Number</label>
+                <input type="tel" id="booking-phone" class="form-input" placeholder="07123 456789">
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="form-group">
+                <label class="form-label" for="booking-package">Select Package *</label>
+                <select id="booking-package" class="form-select" required>
+                  <option value="Solo Self-Portrait (£75)">Solo Self-Portrait (£75 / 45m)</option>
+                  <option value="Duo & Couples Experience (£95)">Duo & Couples Experience (£95 / 45m)</option>
+                  <option value="Branding & LinkedIn Headshots (£120)">Branding & LinkedIn Headshots (£120 / 60m)</option>
+                  <option value="Group & Hen Party (£180)">Group & Hen Party (£180 / 75m)</option>
+                  <option value="Corporate Team Inquiry">Corporate Team Inquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="booking-backdrop">Preferred Backdrop Set</label>
+                <select id="booking-backdrop" class="form-select">
+                  <option value="Warm Ivory">Warm Ivory (Classic & Soft)</option>
+                  <option value="Midnight Charcoal">Midnight Charcoal (Dramatic)</option>
+                  <option value="Editorial Crimson">Editorial Crimson (Bold Red)</option>
+                  <option value="Soft Sage">Soft Sage (Earthy Green)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="form-group">
+                <label class="form-label" for="booking-date">Preferred Shoot Date *</label>
+                <input type="date" id="booking-date" class="form-input" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="booking-time">Preferred Time Slot *</label>
+                <select id="booking-time" class="form-select" required>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="11:30 AM">11:30 AM</option>
+                  <option value="01:00 PM">01:00 PM</option>
+                  <option value="02:30 PM">02:30 PM</option>
+                  <option value="04:00 PM">04:00 PM</option>
+                  <option value="05:30 PM">05:30 PM</option>
+                  <option value="07:00 PM">07:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="booking-notes">Special Requests / Outfit Notes</label>
+              <textarea id="booking-notes" class="form-textarea" rows="3" placeholder="Tell us if you are bringing pets, outfit changes, or celebrating a birthday..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-candid-primary" style="width:100%; justify-content:center; padding:14px;">
+              <span>Confirm & Reserve Studio Session</span>
+              <span class="cta-arrow">→</span>
+            </button>
+          </form>
+
+          <!-- Location Info Box -->
+          <div style="background:var(--bg-secondary); border-radius:var(--radius-md); padding:32px; border:1px solid var(--border-color); display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <span class="section-eyebrow">VISIT OUR NOTTING HILL STUDIO</span>
+              <h3 style="font-family:var(--font-serif); font-size:1.8rem; margin-bottom:12px;">Candid Studios London</h3>
+              <p style="color:var(--color-muted); font-size:0.95rem; margin-bottom:24px; line-height:1.6;">
+                302 Westbourne Grove<br>
+                Notting Hill, London W11 2PS<br>
+                United Kingdom
+              </p>
+
+              <div style="display:flex; flex-direction:column; gap:12px; font-size:0.88rem; color:var(--color-text);">
+                <div><strong>🚆 Tube Stations:</strong> Notting Hill Gate (Central Line) & Ladbroke Grove (Hammersmith & City) — 6 min walk</div>
+                <div><strong>⏰ Studio Hours:</strong> Open Tuesday – Sunday, 10:00 AM – 8:00 PM</div>
+                <div><strong>📧 Direct Email:</strong> hello@candidstudios.co.uk</div>
+                <div><strong>📞 Phone / WhatsApp:</strong> 07412 620276</div>
+              </div>
+            </div>
+
+            <div style="margin-top:32px; padding-top:20px; border-top:1px solid var(--border-color);">
+              <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; color:var(--color-accent); display:block; margin-bottom:4px;">100% Satisfaction Guarantee</span>
+              <p style="font-size:0.82rem; color:var(--color-muted);">If you don't love your photos, our team will re-shoot your session for free or provide a full refund.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+     FOOTER (.candid-footer)
+     ========================================================================== -->
+  <footer class="candid-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-brand">
+          <h3>CANDID</h3>
+          <p style="color:rgba(250,247,242,0.7); font-size:0.9rem; line-height:1.6; margin-bottom:20px; max-width:320px;">
+            London's premier self-portrait studio based in Notting Hill. You hold the remote clicker. We supply the professional studio.
+          </p>
+          <div style="font-size:0.8rem; color:var(--color-gold);">
+            ★ 4.9/5 Rating on Google (330+ Reviews)
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Studio Experience</h4>
+          <ul class="footer-links">
+            <li><a href="#concept">How It Works</a></li>
+            <li><a href="#backdrops">Backdrop Color Sets</a></li>
+            <li><a href="#pricing">Session Rates</a></li>
+            <li><a href="#retrobooth">Candid RetroBooth</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services & Use Cases</h4>
+          <ul class="footer-links">
+            <li><a href="#pricing">Solo Self-Portraits</a></li>
+            <li><a href="#pricing">Couples & Duo Shoots</a></li>
+            <li><a href="#corporate">LinkedIn Headshots</a></li>
+            <li><a href="#corporate">Corporate Team Hire</a></li>
+            <li><a href="#pricing">Hen Parties & Groups</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Notting Hill Studio</h4>
+          <p style="color:rgba(250,247,242,0.7); font-size:0.85rem; line-height:1.6; margin-bottom:12px;">
+            302 Westbourne Grove, London W11 2PS
+          </p>
+          <p style="color:rgba(250,247,242,0.7); font-size:0.85rem; margin-bottom:16px;">
+            Email: hello@candidstudios.co.uk<br>
+            Phone: 07412 620276
+          </p>
+          <a href="#booking" class="btn-candid-primary" style="padding:8px 18px; font-size:0.78rem;">
+            <span>Book Session</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Candid Studios Ltd. All Rights Reserved. Notting Hill, London W11 2PS.</div>
+        <div style="display:flex; gap:20px;">
+          <a href="#" style="color:inherit;">Privacy Policy</a>
+          <a href="#" style="color:inherit;">Terms of Service</a>
+          <a href="#" style="color:inherit;">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
