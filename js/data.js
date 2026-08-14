@@ -1,28 +1,29 @@
 /* ==========================================================================
-   A P STUDIO KOLKATA — DATA STORE (LOCATION: KOLKATA, INDIA)
+   A P STUDIO BAGHAJATIN, KOLKATA — DATA STORE
+   (CHROMA VIDEO SHOOTING & PHOTOGRAPHY STUDIO)
    ========================================================================== */
 
 const CANDID_DATA = {
   brand: {
     name: "A P STUDIO",
-    location: "Park Street, Kolkata 700071",
-    address: "18 Park Street, Kolkata, West Bengal 700071, India",
-    phone: "+91 98300 12345 / 033 2227 8900",
+    location: "Baghajatin, Kolkata 700086",
+    address: "Baghajatin Main Road, Near Railway Station & EM Bypass, Kolkata 700086",
+    phone: "+91 98300 12345 / 033 2425 8900",
     email: "hello@apstudio.co.in",
-    tagline: "Kolkata's Premier Self-Portrait Studio & Creative Production House",
+    tagline: "Kolkata's Premier Studio for Chroma Video Shooting & Photography",
     rating: 4.9,
     reviewsCount: 330
   },
 
   announcement: {
-    text: "☀️ AUGUST SUMMER BUNDLE NOW LIVE • 30% OFF ALL SESSIONS AT OUR KOLKATA STUDIO | Book Your Slot →",
+    text: "☀️ AUGUST SPECIAL: 30% OFF ALL CHROMA VIDEO SHOOTS & PHOTOGRAPHY SESSIONS AT OUR BAGHAJATIN STUDIO | Book Slot →",
     link: "#booking"
   },
 
   hero: {
-    badge: "PARK STREET, KOLKATA",
-    heading: "A self portrait studio in Kolkata where the photographer is you.",
-    subheading: "Take control of your story.",
+    badge: "BAGHAJATIN, KOLKATA",
+    heading: "A professional studio for Chroma Video shooting and photography in Kolkata.",
+    subheading: "Take control of your video & photo production.",
     priceTag: "Sessions from ₹1,499.",
     cta: "BOOK A SESSION"
   },
@@ -30,247 +31,247 @@ const CANDID_DATA = {
   howItWorks: [
     {
       step: "01",
-      title: "Choose Your Backdrop & Vibe",
-      subtitle: "4 CURATED STUDIO SETS",
-      desc: "Select from Warm Ivory, Midnight Charcoal, Editorial Crimson, or Soft Sage backdrop environments. Each set is equipped with studio strobes pre-calibrated for skin tones."
+      title: "Choose Chroma or Backdrop Setup",
+      subtitle: "CHROMA GREEN & MULTI-COLOR SETS",
+      desc: "Select from Seamless Chroma Key Green for video VFX keying, or Warm Ivory, Charcoal, Crimson, and Sage Green backdrop environments pre-lit with professional studio strobes & softboxes."
     },
     {
       step: "02",
-      title: "Private 45-Min Studio Suite",
-      subtitle: "100% PRIVACY • NO PHOTOGRAPHER",
-      desc: "Step into your private studio suite in Kolkata. Play your own Spotify playlist, change outfits, adjust props, and take photos at your own pace with zero awkwardness."
+      title: "Private Sound-Treated Studio",
+      subtitle: "100% PRIVACY • SOUNDPROOF SUITE",
+      desc: "Step into our sound-treated studio suite at Baghajatin. Record crisp audio dialogues, YouTube videos, Reels, or fashion photos at your own pace with zero disruption."
     },
     {
       step: "03",
-      title: "Click & See Live Preview",
-      subtitle: "WIRELESS REMOTE TRIGGER",
-      desc: "Hold the wireless shutter clicker in your hand. Look into the 32-inch studio confidence monitor screen to see your poses in real-time before clicking."
+      title: "4K Video & Live Preview",
+      subtitle: "WIRELESS REMOTE & CONFIDENCE MONITOR",
+      desc: "Monitor your 4K video framing and photo angles live on a 32-inch confidence screen. Take control of your camera trigger remotely with effortless precision."
     },
     {
       step: "04",
-      title: "250+ Photos Delivered Same Day",
-      subtitle: "INSTANT HIGH-RES DIGITAL GALLERY",
-      desc: "Receive your entire full-resolution digital gallery (250+ photos) straight to your inbox within hours of your session, complete with color editing."
+      title: "Same-Day Raw Footage & Photos",
+      subtitle: "INSTANT HIGH-RES DIGITAL TRANSFER",
+      desc: "Receive all your uncompressed 4K video clips and high-resolution digital photos delivered directly to your drive on the exact same day of your shoot."
     }
   ],
 
   backdrops: [
     {
+      id: "chroma",
+      name: "Chroma Key Green",
+      tag: "VFX & VIDEO PRODUCTION",
+      hex: "#00FF00",
+      desc: "Our signature professional green screen setup engineered for seamless video background replacement, YouTube shoots, VFX, and commercial video production.",
+      sampleImage: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80"
+    },
+    {
       id: "ivory",
       name: "Warm Ivory",
-      tag: "CLASSIC & SOFT",
+      tag: "PORTRAIT & INTERVIEW",
       hex: "#F5F0E6",
-      desc: "Our signature editorial backdrop. Warm, glowing ivory tones that enhance natural skin tones. Perfect for solo portraits and couples.",
+      desc: "Classic warm ivory backdrop with calibrated studio softboxes. Ideal for podcast interviews, aesthetic reels, and soft personal portrait photography.",
       sampleImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80"
     },
     {
       id: "charcoal",
       name: "Midnight Charcoal",
-      tag: "DRAMATIC & MOODY",
+      tag: "DRAMATIC & HEADSHOTS",
       hex: "#1A1A18",
-      desc: "Deep studio charcoal backdrop create high-contrast, dramatic portraits and sleek professional LinkedIn headshots.",
+      desc: "Deep studio charcoal background creating high-contrast executive headshots, moody brand videography, and sleek corporate profiles.",
       sampleImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80"
     },
     {
       id: "crimson",
       name: "Editorial Crimson",
-      tag: "BOLD & VIBRANT",
+      tag: "MUSIC VIDEOS & FASHION",
       hex: "#8B2626",
-      desc: "Rich fashion-forward crimson red backdrop that commands attention. Ideal for creative branding and birthday shoots.",
+      desc: "Vibrant fashion-forward crimson red set perfect for music video shooting, product launches, and high-energy creative photography.",
       sampleImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80"
-    },
-    {
-      id: "sage",
-      name: "Soft Sage",
-      tag: "EARTHY & ORGANIC",
-      hex: "#7A8B7B",
-      desc: "Muted botanical sage green backdrop giving a modern, calm visual feel. Great for personal branding and casual portraits.",
-      sampleImage: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80"
     }
   ],
 
   packages: [
     {
       id: "solo",
-      name: "Solo Self-Portrait",
+      name: "Solo Photo & Headshots",
       price: "₹1,499",
       duration: "45 MINS",
       capacity: "1 PERSON",
       featured: false,
-      tag: "MOST POPULAR FOR CREATORS",
+      tag: "FOR CREATORS & MODELS",
       features: [
-        "Full Private Studio Suite Access (45 Mins)",
-        "250+ Full-Res Unedited Photos Delivered Same Day",
+        "Private Studio Suite Access (45 Mins)",
+        "250+ High-Res Photos Delivered Same Day",
         "2 Professional Retouched Edits Included",
-        "Choice of 2 Backdrop Color Sets",
-        "Wireless Shutter Remote Control",
+        "Choice of 2 Backdrop Sets",
+        "Wireless Remote Trigger Control",
         "32\" Live Confidence Monitor"
       ]
     },
     {
-      id: "duo",
-      name: "Duo & Couples Experience",
+      id: "chroma-video",
+      name: "Chroma Video Shoot",
       price: "₹2,499",
-      duration: "45 MINS",
-      capacity: "2-4 PEOPLE",
+      duration: "60 MINS",
+      capacity: "VIDEO / REELS",
       featured: true,
-      tag: "BEST VALUE FOR COUPLES",
+      tag: "MOST POPULAR FOR VIDEO",
       features: [
-        "Private Studio Suite for Couples / Besties (45 Mins)",
-        "300+ Full-Res Unedited Photos Delivered Same Day",
-        "4 Professional Retouched Edits Included",
-        "Choice of 3 Backdrop Color Sets",
-        "Complimentary Drinks & Music Control",
-        "Pet-Friendly Studio Access"
+        "Full Seamless Green Screen Chroma Suite",
+        "4K Raw Video Footage Delivered Same Day",
+        "Sound-Treated Acoustic Studio Suite",
+        "Pre-Lit 3-Point Studio Lighting Setup",
+        "Wireless Audio Mic & Teleprompter Available",
+        "Full Commercial Usage Rights"
       ]
     },
     {
       id: "branding",
-      name: "Branding & LinkedIn Headshots",
+      name: "Commercial & YouTube Video",
       price: "₹3,499",
-      duration: "60 MINS",
-      capacity: "1 PERSON",
+      duration: "90 MINS",
+      capacity: "PRODUCTION",
       featured: false,
-      tag: "EXECUTIVE HEADSHOTS",
+      tag: "YOUTUBE & BRAND SHOOT",
       features: [
-        "Extended 60-Minute Private Headshot Session",
-        "350+ Full-Res Digital Photos Delivered Same Day",
-        "5 Executive Retouched Edits Included",
-        "All 4 Backdrop Color Sets Included",
-        "Multiple Outfit Changes & Prop Setup",
-        "Full Commercial Rights Included"
+        "Extended 90-Minute Private Production Suite",
+        "Unlimited Chroma Video & Photo Shooting",
+        "Multi-Camera Angle Support",
+        "4 Backdrop Sets Included (Chroma Green + Colors)",
+        "Dedicated Studio Assistant On-Site",
+        "Raw Video & Edit-Ready Files Delivered"
       ]
     },
     {
       id: "group",
-      name: "Group & Celebration",
-      price: "₹4,999",
-      duration: "75 MINS",
-      capacity: "UP TO 8 GUESTS",
+      name: "Full-Day Studio Hire",
+      price: "₹6,999",
+      duration: "FULL DAY",
+      capacity: "FILM & FASHION",
       featured: false,
-      tag: "PARTY CELEBRATION",
+      tag: "MUSIC VIDEO & FILM",
       features: [
-        "75-Minute Exclusive Studio Suite Hire",
-        "500+ Digital Photos Delivered Same Day",
-        "8 Professional Retouched Edits Included",
-        "Complimentary Mocktails / Refreshments",
-        "Included Physical RetroBooth Strip Prints",
-        "Party Playlist & Custom Lighting Setup"
+        "Exclusive Full-Day Studio Suite Hire (8 Hours)",
+        "Complete Access to Chroma Green & Backdrop Rigging",
+        "High-Power Continuous LED Video Lights & Strobes",
+        "Green Room & Makeup Vanity Desk Access",
+        "Complimentary Refreshments & High-Speed WiFi",
+        "Dedicated Production Technical Support"
       ]
     }
   ],
 
   corporate: {
-    title: "Headshots Your Team Will Actually Enjoy.",
-    desc: "Say goodbye to rigid corporate photoshoots. A P STUDIO gives your employees complete privacy to take confidence-boosting headshots at our Park Street, Kolkata studio or at your office.",
+    title: "Chroma Video & Headshots for Businesses in Kolkata.",
+    desc: "A P STUDIO provides complete privacy for high-end corporate video production, green screen commercial shoots, and professional headshots at Baghajatin, Kolkata or at your venue.",
     tiers: [
       {
-        name: "The Express Team",
+        name: "Express Video & Photo Team",
         price: "From ₹14,999",
         teamSize: "UP TO 10 EMPLOYEES",
-        desc: "Half-day private studio suite booking in Park Street, Kolkata. Each team member gets 15 minutes of private self-portrait time with live confidence preview."
+        desc: "Half-day private studio suite booking in Baghajatin, Kolkata. Each employee gets Chroma video clips and executive headshots."
       },
       {
-        name: "The Bespoke Studio Hire",
+        name: "Bespoke Production Hire",
         price: "From ₹24,999",
-        teamSize: "UP TO 25 EMPLOYEES",
-        desc: "Full-day studio suite hire in Kolkata with dedicated studio host, light refreshments, multi-backdrop sets, and same-day delivery of all high-res files."
+        teamSize: "FULL DAY PRODUCTION",
+        desc: "Full-day chroma video production hire with technical video engineer, multi-light grid, teleprompter, and same-day 4K raw video delivery."
       },
       {
-        name: "On-Site Pop-Up Studio",
+        name: "On-Site Chroma Setup",
         price: "Custom Quote",
-        teamSize: "25+ EMPLOYEES",
-        desc: "We bring our studio strobe lights, backdrop system, and wireless trigger tech straight to your corporate offices anywhere in Kolkata & Eastern India."
+        teamSize: "OFFICE LOCATION",
+        desc: "We transport our mobile chroma key green screen, studio lights, and 4K camera gear directly to your corporate premises anywhere in Kolkata."
       }
     ]
   },
 
   gallery: [
     {
-      title: "Editorial Fashion Shoot",
-      category: "Solo Portrait",
+      title: "Chroma Key Green Screen Shoot",
+      category: "Video Shooting",
+      tag: "Chroma Green",
+      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Editorial Fashion Photography",
+      category: "Fashion Shoot",
       tag: "Warm Ivory",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Couples & Duo Self-Portrait",
-      category: "Duo Experience",
-      tag: "Crimson Red",
+      title: "YouTube & Reels Video Shoot",
+      category: "Video Production",
+      tag: "Chroma Green",
       image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Executive LinkedIn Headshot",
-      category: "Branding",
+      title: "Executive Headshot & Profile",
+      category: "Corporate Photography",
       tag: "Midnight Charcoal",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Creative Personal Portrait",
-      category: "Solo Portrait",
-      tag: "Soft Sage",
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Birthday & Group Celebration",
-      category: "Group Hire",
-      tag: "Warm Ivory",
+      title: "Music Video & Performance Shoot",
+      category: "Music Video",
+      tag: "Editorial Crimson",
       image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Artist & Musician Profile",
-      category: "Personal Branding",
-      tag: "Crimson Red",
-      image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80"
+      title: "Model Portfolio & Personal Shoot",
+      category: "Personal Photography",
+      tag: "Soft Sage",
+      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
     }
   ],
 
   reviews: [
     {
-      author: "Ananya Roy",
-      location: "Park Street, Kolkata",
-      session: "Solo Self-Portrait",
-      quote: "It's like being inside a self-portrait dream land! Having no photographer in Kolkata made me feel 100% confident. Took 300 photos in 45 minutes and got them all the same day."
+      author: "Siddharth Ghosh",
+      location: "Baghajatin, Kolkata",
+      session: "Chroma Video Shoot",
+      quote: "Outstanding Chroma Green screen setup! The lighting is perfectly even, making keying in Premiere Pro effortless. Best video shooting studio in South Kolkata."
     },
     {
-      author: "Pritam Mukhopadhyay",
-      location: "Salt Lake, Kolkata",
+      author: "Debolina Banerjee",
+      location: "Garia, Kolkata",
+      session: "Fashion & Reels Shoot",
+      quote: "Loved shooting our YouTube content and fashion reels here! Soundproof room, private space, and top-tier lighting gear right near Baghajatin station."
+    },
+    {
+      author: "Abhishek Sen",
+      location: "Jadavpur, Kolkata",
       session: "LinkedIn Headshots",
-      quote: "Best headshots I've ever had. No awkward small talk or fake poses. Just me, a remote clicker, and professional lighting. Highly recommend A P STUDIO Kolkata!"
+      quote: "Best photography studio experiencia in Kolkata. I used the remote clicker to shoot my executive portraits. Got all 300 photos delivered the same day."
     },
     {
-      author: "Rohan & Devika",
-      location: "Ballygunge, Kolkata",
-      session: "Duo & Couples",
-      quote: "We came for our anniversary shoot at Park Street and had so much fun! Playing our own music while clicking the shutter was such an amazing date idea."
-    },
-    {
-      author: "Shreya Sen",
-      location: "New Town, Kolkata",
-      session: "Personal Branding",
-      quote: "The backdrop colors and strobe lighting are world class. I got 5 retouched edits that transformed my website and Instagram presence."
+      author: "Pooja & Team",
+      location: "Tollygunge, Kolkata",
+      session: "Commercial Video Shoot",
+      quote: "We booked the full-day studio for a product commercial shoot. The chroma key setup and technical support were flawless."
     }
   ],
 
   faqs: [
     {
-      question: "How does a self-portrait studio session work in Kolkata?",
-      answer: "You get a private studio suite room to yourself at Park Street, Kolkata. The studio strobe lights and camera are already set up and calibrated. You hold a small wireless clicker in your hand and see your pose live on a 32-inch confidence monitor. When you press the button, the shutter fires!"
+      question: "What is Chroma Video shooting and how is it used?",
+      answer: "Chroma Video shooting uses a seamless green background (Chroma key) that allows video editors to replace the green screen with any background background image, 3D environment, or virtual studio set during post-production!"
     },
     {
-      question: "Is there a photographer in the room with me?",
-      answer: "No! There is zero photographer in the room. You have 100% total privacy during your entire session. A friendly studio host will brief you at the start and then leave you to enjoy your shoot."
+      question: "Is the studio equipped for both video shooting and photography?",
+      answer: "Yes! A P STUDIO in Baghajatin is custom-designed for both 4K Chroma Video production (continuous LED lighting + soundproofing) and high-end Photography (strobe lights + multiple color backdrops)."
     },
     {
-      question: "How many photos will I get?",
-      answer: "You receive ALL the full-resolution photos taken during your slot — typically between 250 and 500+ photos depending on your session length."
+      question: "Where is A P STUDIO located in Kolkata?",
+      answer: "We are located at Baghajatin Main Road, Kolkata 700086 — just a 2-minute walk from Baghajatin Railway Station and easily accessible from EM Bypass, Garia, and Jadavpur."
     },
     {
-      question: "When do I get my photos delivered?",
-      answer: "Your full unedited digital gallery is sent to your email on the exact same day of your photoshoot. Retouched edits are delivered within 48 hours."
+      question: "When do I get my video files and photos delivered?",
+      answer: "All your uncompressed 4K video clips and high-resolution photo files are transferred to your drive on the exact same day of your session."
     },
     {
-      question: "Can I bring outfit changes or pets?",
-      answer: "Yes! You are welcome to bring as many outfit changes as you like during your slot. Our Kolkata studio is also 100% pet-friendly!"
+      question: "Can I bring my own video crew or props?",
+      answer: "Yes! You can bring your director, videographer, props, and outfit changes. Our studio assistant will be present to help you with lighting setups."
     }
   ]
 };
