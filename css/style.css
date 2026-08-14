@@ -635,6 +635,138 @@ img {
   opacity: 0.8;
 }
 
+/* ==========================================================================
+   MAIN SHOOT SERVICES SHOWCASE (MATCHING USER SCREENSHOT)
+   ========================================================================== */
+
+.shoot-category-column {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.shoot-category-column:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+
+.category-header-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.category-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-warm-primary);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.category-shoots-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shoot-subcard {
+  background: var(--bg-warm-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.shoot-subcard:hover {
+  border-color: var(--color-accent);
+}
+
+.shoot-img-box {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.shoot-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.shoot-subcard:hover .shoot-img-box img {
+  transform: scale(1.05);
+}
+
+.shoot-tag-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(20, 20, 20, 0.85);
+  color: #FFFFFF;
+  backdrop-filter: blur(4px);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+}
+
+.shoot-details {
+  padding: 16px;
+}
+
+.shoot-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.shoot-desc {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.shoot-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.shoot-price {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-accent);
+}
+
 /* Sections Base */
 .candid-section {
   padding: 88px 0;

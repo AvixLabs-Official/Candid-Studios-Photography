@@ -1,6 +1,6 @@
 /* ==========================================================================
    A P STUDIO BAGHAJATIN, KOLKATA — DATA STORE
-   (ADDRESS: 51 BAGHAJATIN STATION ROAD, NEAR TALPUKUR PRIMARY SCHOOL)
+   (MAIN SHOOTS: WEDDING, NEWBORN, MATERNITY, PORTRAIT, FASHION, CHROMA VIDEO)
    ========================================================================== */
 
 const CANDID_DATA = {
@@ -10,23 +10,87 @@ const CANDID_DATA = {
     address: "51, Baghajatin Station Road, Near Talpukur Primary School & Canara Bank, Baghajatin Colony, Kolkata 700086",
     phone: "+91 78900 01651 / +91 98300 12345",
     email: "hello@apstudio.co.in",
-    tagline: "Kolkata's Premier Multi-Floor Studio for Chroma Video Shooting & Photography",
+    tagline: "Kolkata's Premier Studio for Chroma Video Shooting & Professional Photography",
     rating: 4.9,
     reviewsCount: 701
   },
 
   announcement: {
-    text: "☀️ AUGUST SPECIAL: 30% OFF ALL CHROMA VIDEO SHOOTS, STUDIO RENTALS & PHOTOGRAPHY AT BAGHAJATIN | Book Slot →",
+    text: "☀️ SPECIAL OFFER: 30% OFF ALL WEDDING, MATERNITY, NEWBORN, FASHION & CHROMA SHOOTS AT BAGHAJATIN | Book Slot →",
     link: "#booking"
   },
 
   hero: {
     badge: "NEAR TALPUKUR PRIMARY SCHOOL, BAGHAJATIN",
-    heading: "A professional studio for Chroma Video shooting and photography in Kolkata.",
-    subheading: "Take control of your film, video & photo production.",
+    heading: "A professional studio for Chroma Video shooting and photography.",
+    subheading: "Specialized in Wedding, Newborn, Maternity, Portrait & Fashion Shoots.",
     priceTag: "Sessions from ₹1,499.",
     cta: "BOOK A SESSION"
   },
+
+  // Main Shoot Categories from User Screenshot
+  shootCategories: [
+    {
+      category: "Photoshoot Type",
+      icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>`,
+      shoots: [
+        {
+          name: "Wedding Shoot",
+          tag: "CANDID & PRE-WEDDING",
+          desc: "Candid & traditional wedding photography, pre-wedding romantic studio shoots, and bridal portraiture.",
+          price: "From ₹4,999",
+          image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          name: "Newborn Shoot",
+          tag: "INFANT & BABY CARE",
+          desc: "Gentle, aesthetic studio newborn photography with soft organic props and temperature-controlled comfort.",
+          price: "From ₹2,499",
+          image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      category: "Lifestyle Photoshoot",
+      icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.72-8.72 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`,
+      shoots: [
+        {
+          name: "Maternity Shoot",
+          tag: "MOTHERHOOD & GLAMOUR",
+          desc: "Elegant maternity portraiture celebrating motherhood with warm backdrop lighting and luxury gown draping.",
+          price: "From ₹2,999",
+          image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          name: "Portrait Shoot",
+          tag: "PERSONAL BRANDING",
+          desc: "Personal branding portraits, LinkedIn headshots, and creative self-portrait sessions with remote shutter control.",
+          price: "From ₹1,499",
+          image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    },
+    {
+      category: "Commercial Photoshoot",
+      icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>`,
+      shoots: [
+        {
+          name: "Fashion Shoot",
+          tag: "MODEL PORTFOLIO & CATALOG",
+          desc: "High-end fashion model portfolios, designer lookbook shoots, and e-commerce catalog photography.",
+          price: "From ₹3,499",
+          image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          name: "Chroma Video Shoot",
+          tag: "GREEN SCREEN & ADS",
+          desc: "Seamless 4K Chroma Key Green screen video shooting for commercial ads, YouTube reels, and film keying.",
+          price: "From ₹2,499",
+          image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
+    }
+  ],
 
   howItWorks: [
     {
@@ -39,7 +103,7 @@ const CANDID_DATA = {
       step: "02",
       title: "Sound-Treated & Private Floors",
       subtitle: "100% PRIVACY • CASTING & AUDITIONS",
-      desc: "Step into our sound-treated studio floors near Talpukur Primary School. Perfect for commercial video shoots, web series auditions, YouTube content, fashion portfolios, or music videos."
+      desc: "Step into our sound-treated studio floors near Talpukur Primary School. Perfect for Wedding, Maternity, Newborn, Fashion portfolios, or Chroma video shoots."
     },
     {
       step: "03",
@@ -67,15 +131,15 @@ const CANDID_DATA = {
     {
       id: "ivory",
       name: "Warm Ivory Floor",
-      tag: "PORTRAIT & FASHION",
+      tag: "PORTRAIT & MATERNITY",
       hex: "#F5F0E6",
-      desc: "Classic warm ivory backdrop set equipped with studio strobe lighting. Ideal for model portfolios, wedding candid portraits, and commercial branding.",
+      desc: "Classic warm ivory backdrop set equipped with studio strobe lighting. Ideal for Maternity shoots, Newborn baby photos, and Wedding portraits.",
       sampleImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80"
     },
     {
       id: "charcoal",
       name: "Midnight Charcoal Floor",
-      tag: "CASTING & HEADSHOTS",
+      tag: "HEADSHOTS & CASTING",
       hex: "#1A1A18",
       desc: "Deep studio charcoal backdrop creating high-contrast executive headshots, moody web series auditions, and sleek corporate profiles.",
       sampleImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80"
@@ -83,29 +147,63 @@ const CANDID_DATA = {
     {
       id: "crimson",
       name: "Editorial Crimson Floor",
-      tag: "MUSIC VIDEOS & EVENTS",
+      tag: "FASHION & MUSIC VIDEOS",
       hex: "#8B2626",
-      desc: "Vibrant fashion-forward crimson red set perfect for music video shoots, product launches, fashion portfolios, and high-energy creative photography.",
+      desc: "Vibrant fashion-forward crimson red set perfect for Fashion shoots, model lookbooks, product launches, and high-energy photography.",
       sampleImage: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80"
     }
   ],
 
   packages: [
     {
-      id: "solo",
-      name: "Solo Photo & Model Portfolio",
-      price: "₹1,499",
-      duration: "45 MINS",
-      capacity: "1 PERSON",
-      featured: false,
-      tag: "FOR CREATORS & MODELS",
+      id: "wedding",
+      name: "Wedding & Pre-Wedding Shoot",
+      price: "₹4,999",
+      duration: "120 MINS",
+      capacity: "COUPLES / BRIDAL",
+      featured: true,
+      tag: "MOST POPULAR FOR WEDDINGS",
       features: [
-        "Private Studio Floor Access (45 Mins)",
-        "250+ High-Res Photos Delivered Same Day",
-        "2 Professional Retouched Edits Included",
-        "Choice of 2 Backdrop Sets",
-        "Wireless Remote Trigger Control",
-        "32\" Live Confidence Monitor"
+        "Private Multi-Set Studio Floor Access (2 Hours)",
+        "500+ High-Res Photos Delivered Same Day",
+        "8 Professional Retouched Edits Included",
+        "Multiple Bridal Outfit & Prop Changes",
+        "Candid & Traditional Lighting Calibration",
+        "Full Commercial Rights Included"
+      ]
+    },
+    {
+      id: "maternity",
+      name: "Maternity & Newborn Shoot",
+      price: "₹2,999",
+      duration: "60 MINS",
+      capacity: "FAMILY / BABY",
+      featured: false,
+      tag: "GENTLE & HYGIENIC",
+      features: [
+        "Soundproof Warm Studio Suite Access",
+        "Sanitized Organic Props & Baby Wrap Swaddles",
+        "300+ High-Res Photos Delivered Same Day",
+        "4 Professional Retouched Edits Included",
+        "Temperature-Controlled Studio Comfort",
+        "Family & Spouse Portraits Included"
+      ]
+    },
+    {
+      id: "fashion",
+      name: "Fashion & Model Portfolio",
+      price: "₹3,499",
+      duration: "90 MINS",
+      capacity: "MODELS / DESIGNERS",
+      featured: false,
+      tag: "MODEL LOOKBOOK",
+      features: [
+        "High-End Editorial Lighting & Strobes",
+        "4 Backdrop Sets Included (Ivory, Charcoal, Crimson, Sage)",
+        "350+ High-Res Photos Delivered Same Day",
+        "5 Magazine-Quality Retouched Edits",
+        "Makeup Vanity Desk & Green Room Access",
+        "Commercial License for Agency Portfolios"
       ]
     },
     {
@@ -114,8 +212,8 @@ const CANDID_DATA = {
       price: "₹2,499",
       duration: "60 MINS",
       capacity: "VIDEO / REELS",
-      featured: true,
-      tag: "MOST POPULAR FOR VIDEO",
+      featured: false,
+      tag: "GREEN SCREEN VIDEO",
       features: [
         "Full Seamless Green Screen Chroma Floor",
         "4K Raw Video Footage Delivered Same Day",
@@ -124,46 +222,12 @@ const CANDID_DATA = {
         "Wireless Audio Mic & Teleprompter Available",
         "Full Commercial Usage Rights"
       ]
-    },
-    {
-      id: "branding",
-      name: "Commercial Ad & YouTube Studio",
-      price: "₹3,499",
-      duration: "90 MINS",
-      capacity: "PRODUCTION",
-      featured: false,
-      tag: "COMMERCIAL AD SHOOT",
-      features: [
-        "Extended 90-Minute Private Production Floor",
-        "Unlimited Chroma Video & Photo Shooting",
-        "Multi-Camera Angle Support",
-        "Access to All 4 Studio Floors & Sets",
-        "Dedicated Studio Assistant On-Site",
-        "Raw Video & Edit-Ready Files Delivered"
-      ]
-    },
-    {
-      id: "group",
-      name: "Full-Day Studio Floor Rent",
-      price: "₹6,999",
-      duration: "FULL DAY",
-      capacity: "FILM & WEBSERIES",
-      featured: false,
-      tag: "FILM & AUDITIONS",
-      features: [
-        "Exclusive Full-Day Studio Floor Hire (8 Hours)",
-        "Complete Access to Chroma Green & Rigging",
-        "High-Power Continuous LED Video Lights & Strobes",
-        "Casting Call & Green Room Vanity Desk",
-        "Complimentary Refreshments & WiFi",
-        "Dedicated Technical Equipment Support"
-      ]
     }
   ],
 
   corporate: {
     title: "Chroma Video & Commercial Studio Hire for Businesses.",
-    desc: "A P STUDIO provides multi-floor rental space for corporate video shooting, green screen commercial ads, model casting calls, and executive headshots near Talpukur Primary School, Baghajatin, Kolkata.",
+    desc: "A P STUDIO provides multi-floor rental space for corporate video shooting, green screen commercial ads, fashion catalog shoots, and executive headshots near Talpukur Primary School, Baghajatin, Kolkata.",
     tiers: [
       {
         name: "Express Team Shoot",
@@ -175,7 +239,7 @@ const CANDID_DATA = {
         name: "Bespoke Commercial Production",
         price: "From ₹24,999",
         teamSize: "FULL DAY PRODUCTION",
-        desc: "Full-day chroma video & photo production hire with camera equipment rental, lighting grid, teleprompter, and same-day 4K raw video delivery."
+        desc: "Full-day chroma video & fashion production hire with camera equipment rental, lighting grid, teleprompter, and same-day 4K raw video delivery."
       },
       {
         name: "On-Site Production Setup",
@@ -188,89 +252,89 @@ const CANDID_DATA = {
 
   gallery: [
     {
+      title: "Candid Wedding & Pre-Wedding Shoot",
+      category: "Wedding Shoot",
+      tag: "Warm Ivory",
+      image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Newborn Baby Studio Shoot",
+      category: "Newborn Shoot",
+      tag: "Soft Sage",
+      image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Elegant Maternity Photography",
+      category: "Maternity Shoot",
+      tag: "Warm Ivory",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Model Portfolio & Fashion Shoot",
+      category: "Fashion Shoot",
+      tag: "Editorial Crimson",
+      image: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80"
+    },
+    {
       title: "Chroma Key Green Screen Shoot",
-      category: "Video Shooting",
+      category: "Chroma Video",
       tag: "Chroma Green",
       image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Model Portfolio & Fashion Photography",
-      category: "Fashion Shoot",
-      tag: "Warm Ivory",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "YouTube & Commercial Ad Shoot",
-      category: "Video Production",
-      tag: "Chroma Green",
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Executive Headshot & Profile",
-      category: "Corporate Photography",
+      title: "Personal Branding & Portrait Shoot",
+      category: "Portrait Shoot",
       tag: "Midnight Charcoal",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Music Video & Webseries Shoot",
-      category: "Music Video",
-      tag: "Editorial Crimson",
-      image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Wedding Candid & Portrait Photography",
-      category: "Personal Photography",
-      tag: "Soft Sage",
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
     }
   ],
 
   reviews: [
     {
-      author: "Siddharth Ghosh",
+      author: "Siddharth & Sneha",
       location: "Baghajatin Colony, Kolkata",
-      session: "Chroma Video Shoot",
-      quote: "Outstanding Chroma Green screen setup! The lighting is perfectly even across the studio floor, making keying in Premiere Pro effortless. Best video studio near Talpukur."
+      session: "Pre-Wedding Shoot",
+      quote: "We had our pre-wedding shoot at A P Studio! The studio lighting, privacy, and warm ivory set made our photos look like a magazine cover. Highly recommended!"
     },
     {
-      author: "Debolina Banerjee",
+      author: "Pooja Banerjee",
       location: "Baghajatin Station Road, Kolkata",
-      session: "Fashion Portfolio",
-      quote: "Loved shooting our model portfolio and YouTube reels at A P Studio! Multi-floor space, private environment, and top-tier lighting gear right near Baghajatin station."
+      session: "Maternity & Newborn",
+      quote: "The team created such a warm, comfortable environment for my maternity photoshoot and baby pictures. Absolutely loved the photos!"
     },
     {
-      author: "Raj Rajeswar Singha Roy",
+      author: "Ankan Sen",
       location: "Jadavpur, Kolkata",
-      session: "Casting & Headshots",
-      quote: "Great studio on rent in Baghajatin. We hosted web series casting auditions here. The team provided camera equipment and lighting support."
+      session: "Fashion Model Portfolio",
+      quote: "Top-notch fashion shoot facility in South Kolkata. The crimson and charcoal backdrops are incredible for model portfolios."
     },
     {
-      author: "Pooja & Crew",
+      author: "Subhabrata Das",
       location: "EM Bypass, Kolkata",
-      session: "Commercial Ad Shoot",
-      quote: "We booked studio floor 3 for a commercial product shoot. The chroma key setup and equipment rental service were top notch!"
+      session: "Chroma Video Shoot",
+      quote: "We booked studio floor 3 for a Chroma video commercial. Even lighting, soundproof room, and camera gear support!"
     }
   ],
 
   faqs: [
     {
-      question: "Where is A P Studio located in Baghajatin, Kolkata?",
-      answer: "A P Studio is located at 51, Baghajatin Station Road, near Talpukur Primary School & Canara Bank, Baghajatin Colony, Kolkata - 700086 (Just 2 minutes from Baghajatin Railway Station and near EM Bypass)."
+      question: "What main photoshoot types does A P Studio offer in Baghajatin?",
+      answer: "We specialize in Wedding Shoots, Newborn Shoots, Maternity Shoots, Portrait Shoots, Fashion Shoots, and Chroma Key Green Video Shoots."
     },
     {
-      question: "What studio services does A P Studio offer?",
-      answer: "We offer Photo Studios On Rent across multiple floors for Chroma Key Green video shooting, commercial ad production, film/webseries casting auditions, fashion model portfolios, wedding candid photography, and camera equipment rental."
+      question: "Where is A P Studio located in Kolkata?",
+      answer: "A P Studio is located at 51, Baghajatin Station Road, near Talpukur Primary School & Canara Bank, Baghajatin Colony, Kolkata - 700086 (2 mins from Baghajatin Railway Station)."
     },
     {
-      question: "Is equipment rental available on-site?",
-      answer: "Yes! We provide studio strobe lights, continuous LED video lighting grids, softboxes, wireless remote triggers, teleprompters, and audio microphone rigs."
+      question: "Are props and gown drapings available for Maternity and Newborn shoots?",
+      answer: "Yes! We maintain clean, sanitized baby wraps, props, swaddles, and backdrop settings in a temperature-controlled studio environment."
     },
     {
-      question: "When do I receive raw video footage and photos?",
-      answer: "All your uncompressed 4K video clips, green screen raw files, and high-resolution photo files are transferred to your drive on the exact same day of your session."
+      question: "When do I receive my photos and videos?",
+      answer: "All your uncompressed 4K video clips, green screen raw files, and high-resolution photo files are transferred to your drive on the exact same day of your shoot."
     },
     {
-      question: "How do I contact A P Studio for booking?",
+      question: "How do I book a session at A P Studio?",
       answer: "You can book directly on this site or call us at +91 78900 01651 / +91 98300 12345. We are open Monday – Sunday from 7:00 AM to 6:30 PM."
     }
   ]

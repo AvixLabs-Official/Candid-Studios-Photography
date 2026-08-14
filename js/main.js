@@ -1,5 +1,5 @@
 /* ==========================================================================
-   A P STUDIO KOLKATA — MAIN JAVASCRIPT ORCHESTRATOR
+   A P STUDIO BAGHAJATIN, KOLKATA — MAIN JAVASCRIPT ORCHESTRATOR
    ========================================================================== */
 
 let activeColor = 'ivory';
@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initHeroSlideshow();
   initGalleryCarousel();
+  renderMainShootsGrid();
   renderHowItWorksGrid();
   renderBackdropsGrid();
   renderPricingGrid();
@@ -62,11 +63,11 @@ function initHeroSlideshow() {
   if (!imgEl) return;
 
   const slides = [
-    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80',
-    'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80',
-    'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=80',
-    'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1000&q=80',
-    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80'
+    'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80',
+    'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80',
+    'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1000&q=80',
+    'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=1000&q=80',
+    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80'
   ];
 
   let currentIndex = 0;
@@ -107,6 +108,42 @@ function initMobileDrawer() {
       drawer?.classList.remove('active');
     });
   });
+}
+
+/* Render Main Shoots Grid (Wedding, Newborn, Maternity, Portrait, Fashion, Chroma) */
+function renderMainShootsGrid() {
+  const container = document.getElementById('main-shoots-grid');
+  if (!container || !CANDID_DATA?.shootCategories) return;
+
+  container.innerHTML = CANDID_DATA.shootCategories.map(cat => `
+    <div class="shoot-category-column">
+      <div class="category-header-pill">
+        <span class="category-icon">${cat.icon}</span>
+        <h3 class="category-title">${cat.category}</h3>
+      </div>
+      <div class="category-shoots-list">
+        ${cat.shoots.map(s => `
+          <article class="shoot-subcard">
+            <div class="shoot-img-box">
+              <img src="${s.image}" alt="${s.name}" loading="lazy">
+              <span class="shoot-tag-badge">${s.tag}</span>
+            </div>
+            <div class="shoot-details">
+              <h4 class="shoot-name">${s.name}</h4>
+              <p class="shoot-desc">${s.desc}</p>
+              <div class="shoot-bottom-bar">
+                <span class="shoot-price">${s.price}</span>
+                <a href="#booking" onclick="selectPackageForBooking('${s.name}')" class="btn-candid-black btn-sm">
+                  <span>Book Shoot</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
 }
 
 /* Render How It Works Grid */
@@ -186,7 +223,17 @@ function renderPricingGrid() {
 
 function selectPackageForBooking(name) {
   const selectEl = document.getElementById('booking-package');
-  if (selectEl) selectEl.value = name;
+  if (selectEl) {
+    let matched = false;
+    for (let opt of selectEl.options) {
+      if (opt.value.toLowerCase().includes(name.toLowerCase())) {
+        selectEl.value = opt.value;
+        matched = true;
+        break;
+      }
+    }
+    if (!matched) selectEl.selectedIndex = 0;
+  }
 }
 
 /* Render Corporate Headshots */
@@ -266,14 +313,12 @@ function triggerShutterClick() {
   const counterEl = document.getElementById('click-counter');
   if (counterEl) counterEl.textContent = clickTotal;
 
-  // Flash overlay screen animation
   const flash = document.getElementById('flash-overlay');
   if (flash) {
     flash.classList.add('flashing');
     setTimeout(() => flash.classList.remove('flashing'), 100);
   }
 
-  // Camera Shutter Audio FX
   try {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     const osc = ctx.createOscillator();
@@ -299,7 +344,7 @@ function switchBackdrop(id) {
   const labelEl = document.getElementById('active-set-title');
 
   if (stageImg) stageImg.src = bData.sampleImage;
-  if (labelEl) labelEl.textContent = bData.name + ' Backdrop Set';
+  if (labelEl) labelEl.textContent = bData.name + ' Set';
 
   document.querySelectorAll('.swatch').forEach(swatch => {
     if (swatch.getAttribute('data-color') === id) {
@@ -350,7 +395,7 @@ function initBookingForm() {
         alert(`Note: ${data.message || 'Please verify your information.'}`);
       }
     } catch (err) {
-      alert(`Session Reserved! Thank you ${name}, your booking for ${packageType} has been received. Our Kolkata studio host will email your confirmation shortly at ${email}.`);
+      alert(`Session Reserved! Thank you ${name}, your booking for ${packageType} has been received. Our Baghajatin studio team will email your confirmation shortly at ${email}.`);
       form.reset();
     } finally {
       if (btn) btn.disabled = false;
