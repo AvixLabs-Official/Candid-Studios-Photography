@@ -4,8 +4,6 @@
 
 let activeColor = 'ivory';
 let clickTotal = 0;
-let isBundleMode = false;
-let selectedAddonsSum = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
@@ -15,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderHowItWorksGrid();
   renderBackdropsGrid();
   renderPricingGrid();
-  initPricingToggle();
   renderCorporateGrid();
   renderReviewsGrid();
   renderFaqsAccordion();
@@ -191,87 +188,43 @@ function renderBackdropsGrid() {
   `).join('');
 }
 
-/* Interactive Pricing Billing Toggle Switch */
-function initPricingToggle() {
-  const switchBtn = document.getElementById('pricing-toggle-switch');
-  const labelSingle = document.getElementById('toggle-label-single');
-  const labelBundle = document.getElementById('toggle-label-bundle');
-
-  switchBtn?.addEventListener('click', () => {
-    isBundleMode = !isBundleMode;
-    switchBtn.classList.toggle('active', isBundleMode);
-    labelSingle?.classList.toggle('active', !isBundleMode);
-    labelBundle?.classList.toggle('active', isBundleMode);
-    renderPricingGrid();
-  });
-}
-
-/* Add-ons Calculator */
 function toggleAddon(btn, amount) {
   btn.classList.toggle('active');
-  if (btn.classList.contains('active')) {
-    selectedAddonsSum += amount;
-  } else {
-    selectedAddonsSum -= amount;
-  }
-
-  const totalBar = document.getElementById('addons-total-bar');
-  const totalPriceEl = document.getElementById('addons-total-price');
-
-  if (selectedAddonsSum > 0) {
-    if (totalBar) totalBar.style.display = 'flex';
-    if (totalPriceEl) totalPriceEl.textContent = `+₹${selectedAddonsSum.toLocaleString()}`;
-  } else {
-    if (totalBar) totalBar.style.display = 'none';
-  }
 }
 
-/* Professional & Clean Pricing Cards Renderer (Matching candidstudios.co.uk 1-to-1) */
+/* Minimal Streamlined Pricing Cards Renderer */
 function renderPricingGrid() {
   const container = document.getElementById('pricing-grid');
   if (!container || !CANDID_DATA?.packages) return;
 
-  container.innerHTML = CANDID_DATA.packages.map(p => {
-    let rawNum = parseInt(p.price.replace(/[^0-9]/g, ''), 10);
-    let displayPrice = p.price;
-    let durationTag = p.duration;
+  container.innerHTML = CANDID_DATA.packages.map(p => `
+    <article class="pricing-item-card minimal-card ${p.featured ? 'popular' : ''}">
+      ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
+      
+      <div class="pricing-header-box" style="margin-bottom:12px;">
+        <span class="plan-category-tag" style="font-size:0.62rem;">${p.capacity}</span>
+        <h3 class="plan-title" style="font-size:1.25rem;">${p.name}</h3>
+      </div>
+      
+      <div class="plan-price-box" style="margin:8px 0 16px; padding-bottom:12px;">
+        <span class="plan-amount" style="font-size:2.2rem;">${p.price}</span>
+        <span class="plan-duration" style="font-size:0.72rem;">/ ${p.duration}</span>
+      </div>
 
-    if (isBundleMode) {
-      let bundlePerShoot = Math.round(rawNum * 0.8);
-      displayPrice = `₹${bundlePerShoot.toLocaleString()}`;
-      durationTag = `per shoot (3-shoot pass)`;
-    }
+      <ul class="plan-list" style="gap:8px; margin-bottom:20px;">
+        ${p.features.slice(0, 3).map(f => `
+          <li style="font-size:0.8rem;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>${f}</span>
+          </li>
+        `).join('')}
+      </ul>
 
-    return `
-      <article class="pricing-item-card ${p.featured ? 'popular' : ''}">
-        ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
-        
-        <div class="pricing-header-box">
-          <span class="plan-category-tag">${p.capacity}</span>
-          <h3 class="plan-title">${p.name}</h3>
-        </div>
-        
-        <div class="plan-price-box">
-          <span class="plan-amount">${displayPrice}</span>
-          <span class="plan-duration">/ ${durationTag}</span>
-        </div>
-
-        <ul class="plan-list">
-          ${p.features.map(f => `
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>${f}</span>
-            </li>
-          `).join('')}
-        </ul>
-
-        <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black btn-block" style="${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''}">
-          <span>Book ${p.name}</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-      </article>
-    `;
-  }).join('');
+      <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black btn-block btn-sm" style="${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''} padding: 10px;">
+        <span>Book ${p.name}</span>
+      </a>
+    </article>
+  `).join('');
 }
 
 function selectPackageForBooking(name) {

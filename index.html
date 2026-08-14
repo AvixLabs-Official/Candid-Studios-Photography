@@ -275,75 +275,35 @@
     </div>
   </section>
 
-  <!-- Transparent Pricing Packages Section (100% Clean Professional Studio Design) -->
-  <section class="candid-section" id="pricing" style="background:var(--bg-warm-secondary);">
+  <!-- Minimal Transparent Pricing Packages Section -->
+  <section class="candid-section minimal-pricing-section" id="pricing" style="background:var(--bg-warm-secondary); padding: 56px 0;">
     <div class="container">
-      <div style="text-align:center;">
+      <div style="text-align:center; max-width:600px; margin: 0 auto 32px;">
         <span class="section-kicker" style="text-align:center;">TRANSPARENT PRICING</span>
-        <h2 class="section-heading" style="text-align:center;">Session Packages & Rates</h2>
-        <p class="section-subheading" style="text-align:center; margin:0 auto 24px;">Every session includes full private studio access, 4K raw video clips or high-res photo delivery on the same day.</p>
-        
-        <!-- Interactive Billing Toggle Switch: Single Session vs 3-Shoot Pass -->
-        <div class="pricing-toggle-wrapper">
-          <span class="toggle-label active" id="toggle-label-single">Single Session</span>
-          <button class="pricing-toggle-btn" id="pricing-toggle-switch" aria-label="Toggle Pricing Billing Mode">
-            <span class="toggle-slider"></span>
-          </button>
-          <span class="toggle-label" id="toggle-label-bundle">
-            3-Shoot Studio Bundle Pass
-            <span class="save-badge">SAVE 20%</span>
-          </span>
-        </div>
+        <h2 class="section-heading" style="text-align:center; font-size: 2.2rem; margin-bottom: 8px;">Session Packages & Rates</h2>
+        <p class="section-subheading" style="text-align:center; margin: 0 auto; font-size: 0.92rem;">Full private studio access, 4K raw video clips or high-res photos delivered same day.</p>
       </div>
 
-      <!-- 4-Column Professional Pricing Cards Grid -->
-      <div class="candid-grid-4col" id="pricing-grid">
+      <!-- 4-Column Compact Minimal Pricing Cards Grid -->
+      <div class="candid-grid-4col minimal-pricing-grid" id="pricing-grid">
         <!-- Rendered dynamically -->
       </div>
 
-      <!-- Professional Session Add-ons Customizer -->
-      <div class="fun-addons-wrapper">
-        <div class="addons-header">
-          <span class="addons-tag">CUSTOMIZE YOUR SESSION</span>
-          <h3>Popular Session Add-ons</h3>
-          <p>Select any add-on below to customize your booking package.</p>
-        </div>
-
-        <div class="addons-pills-grid">
-          <button class="addon-pill-btn" onclick="toggleAddon(this, 299)" data-addon="Physical RetroBooth Prints">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-            <span>RetroBooth Strip Prints</span>
-            <span class="addon-price">+₹299</span>
+      <!-- Minimal Session Add-ons Strip -->
+      <div class="minimal-addons-strip">
+        <span class="addons-strip-label">Popular Add-ons:</span>
+        <div class="addons-strip-pills">
+          <button class="addon-pill-btn btn-sm" onclick="toggleAddon(this, 299)">
+            <span>RetroBooth Prints (+₹299)</span>
+          </button>          <button class="addon-pill-btn btn-sm" onclick="toggleAddon(this, 299)">
+            <span>Extra Edit (+₹299)</span>
           </button>
-
-          <button class="addon-pill-btn" onclick="toggleAddon(this, 299)" data-addon="Extra Retouched Edit">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
-            <span>Extra Retouched Edit</span>
-            <span class="addon-price">+₹299</span>
+          <button class="addon-pill-btn btn-sm" onclick="toggleAddon(this, 799)">
+            <span>+30 Mins Studio (+₹799)</span>
           </button>
-
-          <button class="addon-pill-btn" onclick="toggleAddon(this, 799)" data-addon="Extra 30 Mins Studio Time">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Extra 30 Mins Studio Time</span>
-            <span class="addon-price">+₹799</span>
+          <button class="addon-pill-btn btn-sm" onclick="toggleAddon(this, 499)">
+            <span>Teleprompter Rig (+₹499)</span>
           </button>
-
-          <button class="addon-pill-btn" onclick="toggleAddon(this, 499)" data-addon="Teleprompter & Mic Rig">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
-            <span>Teleprompter & Mic Rig</span>
-            <span class="addon-price">+₹499</span>
-          </button>
-        </div>
-
-        <div class="addons-total-bar" id="addons-total-bar" style="display:none;">
-          <div class="total-info">
-            <span>Selected Add-ons Total:</span>
-            <strong id="addons-total-price">+₹0</strong>
-          </div>
-          <a href="#booking" class="btn-candid-black btn-sm">
-            <span>Apply to Booking</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
         </div>
       </div>
 
