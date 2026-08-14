@@ -4,8 +4,8 @@
 
 let activeColor = 'ivory';
 let clickTotal = 0;
-let isBundleMode = false;
-let selectedAddonsSum = 0;
+let childishDurationMode = 'standard';
+let childishStickersTotal = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderMainShootsGrid();
   renderHowItWorksGrid();
   renderBackdropsGrid();
-  renderPricingGrid();
-  initPricingToggle();
+  renderChildishPricingGrid();
   renderCorporateGrid();
   renderReviewsGrid();
   renderFaqsAccordion();
@@ -191,84 +190,88 @@ function renderBackdropsGrid() {
   `).join('');
 }
 
-/* Interactive Pricing Billing Toggle Switch */
-function initPricingToggle() {
-  const switchBtn = document.getElementById('pricing-toggle-switch');
-  const labelSingle = document.getElementById('toggle-label-single');
-  const labelBundle = document.getElementById('toggle-label-bundle');
-
-  switchBtn?.addEventListener('click', () => {
-    isBundleMode = !isBundleMode;
-    switchBtn.classList.toggle('active', isBundleMode);
-    labelSingle?.classList.toggle('active', !isBundleMode);
-    labelBundle?.classList.toggle('active', isBundleMode);
-    renderPricingGrid();
-  });
+/* Switch Childish Pricing Duration Level */
+function switchChildishDuration(btn, mode) {
+  document.querySelectorAll('.candy-pill-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  childishDurationMode = mode;
+  renderChildishPricingGrid();
 }
 
-/* Fun Interactive Add-ons Calculator */
-function toggleAddon(btn, amount) {
+/* Toggle Childish Sticker Goodies */
+function toggleChildishSticker(btn, price) {
   btn.classList.toggle('active');
   if (btn.classList.contains('active')) {
-    selectedAddonsSum += amount;
+    childishStickersTotal += price;
   } else {
-    selectedAddonsSum -= amount;
+    childishStickersTotal -= price;
   }
 
-  const totalBar = document.getElementById('addons-total-bar');
-  const totalPriceEl = document.getElementById('addons-total-price');
+  const summary = document.getElementById('childish-cart-summary');
+  const priceEl = document.getElementById('childish-cart-price');
 
-  if (selectedAddonsSum > 0) {
-    if (totalBar) totalBar.style.display = 'flex';
-    if (totalPriceEl) totalPriceEl.textContent = `+₹${selectedAddonsSum.toLocaleString()}`;
+  if (childishStickersTotal > 0) {
+    if (summary) summary.style.display = 'flex';
+    if (priceEl) priceEl.textContent = `+₹${childishStickersTotal.toLocaleString()}`;
   } else {
-    if (totalBar) totalBar.style.display = 'none';
+    if (summary) summary.style.display = 'none';
   }
 }
 
-/* Professional & Fun Transparent Pricing Renderer */
-function renderPricingGrid() {
+/* Unique Playful Childish Doodle Pricing Renderer */
+function renderChildishPricingGrid() {
   const container = document.getElementById('pricing-grid');
   if (!container || !CANDID_DATA?.packages) return;
 
-  container.innerHTML = CANDID_DATA.packages.map(p => {
-    // Calculate discounted bundle price if bundle mode active
-    let rawNum = parseInt(p.price.replace(/[^0-9]/g, ''), 10);
-    let displayPrice = p.price;
-    let durationTag = p.duration;
+  const playfulThemes = [
+    { cardBg: '#FFF9E6', badgeBg: '#FFD966', badgeIcon: '⭐', accent: '#E08000', tag: 'POPULAR SOLO!' },
+    { cardBg: '#FFE5EC', badgeBg: '#FF85A1', badgeIcon: '👶', accent: '#D81B60', tag: 'MOMMY & BABY!' },
+    { cardBg: '#E8F8F5', badgeBg: '#76D7C4', badgeIcon: '👗', accent: '#117A65', tag: 'FASHION STAR!' },
+    { cardBg: '#EBF5FB', badgeBg: '#85C1E9', badgeIcon: '💍', accent: '#1F618D', tag: 'GRAND WEDDING!' }
+  ];
 
-    if (isBundleMode) {
-      let bundlePerShoot = Math.round(rawNum * 0.8); // 20% discount
-      displayPrice = `₹${bundlePerShoot.toLocaleString()}`;
-      durationTag = `per shoot (3-shoot pass)`;
+  container.innerHTML = CANDID_DATA.packages.map((p, idx) => {
+    const theme = playfulThemes[idx % playfulThemes.length];
+    let rawNum = parseInt(p.price.replace(/[^0-9]/g, ''), 10);
+    let finalPrice = p.price;
+    let durationLabel = p.duration;
+
+    if (childishDurationMode === 'deluxe') {
+      let deluxeNum = Math.round(rawNum * 1.55);
+      finalPrice = `₹${deluxeNum.toLocaleString()}`;
+      durationLabel = 'Full Party (120 Mins)';
     }
 
     return `
-      <article class="pricing-item-card ${p.featured ? 'popular' : ''}">
-        ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
+      <article class="childish-card ${p.featured ? 'super-featured' : ''}" style="background-color: ${theme.cardBg}; border-color: #141414;">
         
-        <div class="pricing-header-box">
-          <span class="plan-category-tag">${p.capacity}</span>
-          <h3 class="plan-title">${p.name}</h3>
-        </div>
-        
-        <div class="plan-price-box">
-          <span class="plan-amount">${displayPrice}</span>
-          <span class="plan-duration">/ ${durationTag}</span>
+        <!-- Wobbly Comic Badge -->
+        <div class="childish-card-badge" style="background-color: ${theme.badgeBg};">
+          <span>${theme.badgeIcon} ${p.tag || theme.tag}</span>
         </div>
 
-        <ul class="plan-list">
+        <div class="childish-card-header">
+          <span class="childish-card-sub" style="color: ${theme.accent};">${p.capacity}</span>
+          <h3 class="childish-card-title">${p.name}</h3>
+        </div>
+
+        <div class="childish-price-box">
+          <span class="childish-amount" style="color: ${theme.accent};">${finalPrice}</span>
+          <span class="childish-duration">/ ${durationLabel}</span>
+        </div>
+
+        <!-- Fun Doodle Bullet List -->
+        <ul class="childish-features-list">
           ${p.features.map(f => `
             <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="${p.featured ? 'var(--color-gold)' : 'var(--color-accent)'}" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span class="doodle-bullet">🎨</span>
               <span>${f}</span>
             </li>
           `).join('')}
         </ul>
 
-        <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black btn-block" style="${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''}">
-          <span>Book ${p.name}</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-childish-card-action" style="background-color: #141414; color: #FFFFFF;">
+          <span>Book This Shoot! 🚀</span>
         </a>
       </article>
     `;

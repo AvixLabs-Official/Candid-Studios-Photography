@@ -275,74 +275,93 @@
     </div>
   </section>
 
-  <!-- Transparent Pricing Packages Section (Professional & Fun Interface) -->
-  <section class="candid-section" id="pricing" style="background:var(--bg-warm-secondary);">
+  <!-- Transparent Pricing Packages Section (Unique Playful Childish & Doodle Design) -->
+  <section class="childish-pricing-section" id="pricing">
+    <!-- Playful Floating Background Doodles -->
+    <div class="doodle-bg-element doodle-star-1">⭐</div>
+    <div class="doodle-bg-element doodle-balloon-1">🎈</div>
+    <div class="doodle-bg-element doodle-sparkle-1">✨</div>
+    <div class="doodle-bg-element doodle-palette-1">🎨</div>
+
     <div class="container">
-      <div style="text-align:center;">
-        <span class="section-kicker" style="text-align:center;">TRANSPARENT PRICING</span>
-        <h2 class="section-heading" style="text-align:center;">Session Packages & Rates</h2>
-        <p class="section-subheading" style="text-align:center; margin:0 auto 24px;">Every session includes full private studio access, 4K raw video clips or high-res photo delivery on the same day.</p>
-        
-        <!-- Interactive Billing Toggle: Single Session vs 3-Shoot Bundle Pass -->
-        <div class="pricing-toggle-wrapper">
-          <span class="toggle-label active" id="toggle-label-single">Single Session</span>
-          <button class="pricing-toggle-btn" id="pricing-toggle-switch" aria-label="Toggle Pricing Billing Mode">
-            <span class="toggle-slider"></span>
-          </button>
-          <span class="toggle-label" id="toggle-label-bundle">
-            3-Shoot Studio Bundle Pass
-            <span class="save-badge">SAVE 20%</span>
-          </span>
-        </div>
-      </div>
+      <div class="childish-header-box">
+        <span class="childish-kicker">🎪 SUPER SIMPLE PRICING</span>
+        <h2 class="childish-heading">Fun & Transparent Packages 🍿</h2>
+        <p class="childish-subheading">No hidden fees! Every session comes with private studio access, all raw photos/videos, and same-day delivery! 🎁</p>
 
-      <!-- 4-Column Pricing Cards Grid -->
-      <div class="candid-grid-4col" id="pricing-grid">
-        <!-- Rendered dynamically -->
-      </div>
-
-      <!-- Fun Interactive Add-ons Calculator Bar -->
-      <div class="fun-addons-wrapper">
-        <div class="addons-header">
-          <span class="addons-tag">⚡ CUSTOMIZE YOUR SHOOT</span>
-          <h3>Popular Session Add-ons</h3>
-          <p>Click any add-on to customize your package live!</p>
-        </div>
-
-        <div class="addons-pills-grid">
-          <button class="addon-pill-btn" onclick="toggleAddon(this, 299)" data-addon="Physical RetroBooth Prints">
-            <span class="addon-icon">📸</span>
-            <span>RetroBooth Strip Prints</span>
-            <span class="addon-price">+₹299</span>
-          </button>
-
-          <button class="addon-pill-btn" onclick="toggleAddon(this, 299)" data-addon="Extra Retouched Edit">
-            <span class="addon-icon">✨</span>
-            <span>Extra Retouched Edit</span>
-            <span class="addon-price">+₹299</span>
-          </button>
-
-          <button class="addon-pill-btn" onclick="toggleAddon(this, 799)" data-addon="Extra 30 Mins Studio Time">
-            <span class="addon-icon">⏰</span>
-            <span>Extra 30 Mins Studio Time</span>
-            <span class="addon-price">+₹799</span>
-          </button>
-
-          <button class="addon-pill-btn" onclick="toggleAddon(this, 499)" data-addon="Teleprompter & Mic Rig">
-            <span class="addon-icon">🎙️</span>
-            <span>Teleprompter & Mic Rig</span>
-            <span class="addon-price">+₹499</span>
-          </button>
-        </div>
-
-        <div class="addons-total-bar" id="addons-total-bar" style="display:none;">
-          <div class="total-info">
-            <span>Selected Add-ons Total:</span>
-            <strong id="addons-total-price">+₹0</strong>
+        <!-- Playful Candy Duration Selector Bar -->
+        <div class="childish-duration-bar">
+          <span class="duration-title">Select Shoot Fun Level:</span>
+          <div class="duration-pills">
+            <button class="candy-pill-btn active" onclick="switchChildishDuration(this, 'standard')">
+              <span>⚡ Quick Shoot (45-60 min)</span>
+            </button>
+            <button class="candy-pill-btn" onclick="switchChildishDuration(this, 'deluxe')">
+              <span>🌟 Full Party (90-120 min)</span>
+              <span class="candy-discount-badge">SAVE 15%! 🎉</span>
+            </button>
           </div>
-          <a href="#booking" class="btn-candid-black btn-sm">
-            <span>Apply to Booking</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+      </div>
+
+      <!-- Playful Comic Doodle Cards Grid -->
+      <div class="childish-pricing-grid" id="pricing-grid">
+        <!-- Rendered dynamically with doodle cards -->
+      </div>
+
+      <!-- Playful "Pick Your Goodies" Add-on Box -->
+      <div class="childish-addons-box">
+        <div class="addons-box-header">
+          <span class="candy-tag">🍭 ADD EXTRA MAGIC</span>
+          <h3>Pick Your Goodies & Props 🎁</h3>
+          <p>Tap any sticker to add extra fun items to your shoot!</p>
+        </div>
+
+        <div class="childish-stickers-grid">
+          <button class="doodle-sticker-btn" onclick="toggleChildishSticker(this, 299)" data-item="RetroBooth Photo Strips">
+            <span class="sticker-emoji">📸</span>
+            <div class="sticker-info">
+              <strong>RetroBooth Strips</strong>
+              <span>Physical prints to keep forever!</span>
+            </div>
+            <span class="sticker-price-tag">+₹299</span>
+          </button>
+
+          <button class="doodle-sticker-btn" onclick="toggleChildishSticker(this, 299)" data-item="Magical Glow Retouching">
+            <span class="sticker-emoji">✨</span>
+            <div class="sticker-info">
+              <strong>Glow Retouching</strong>
+              <span>5 extra skin & color retouched photos</span>
+            </div>
+            <span class="sticker-price-tag">+₹299</span>
+          </button>
+
+          <button class="doodle-sticker-btn" onclick="toggleChildishSticker(this, 799)" data-item="30 Mins Extra Playtime">
+            <span class="sticker-emoji">⏰</span>
+            <div class="sticker-info">
+              <strong>Extra Playtime!</strong>
+              <span>30 more minutes in the studio</span>
+            </div>
+            <span class="sticker-price-tag">+₹799</span>
+          </button>
+
+          <button class="doodle-sticker-btn" onclick="toggleChildishSticker(this, 499)" data-item="Chroma VFX Props">
+            <span class="sticker-emoji">🎬</span>
+            <div class="sticker-info">
+              <strong>Chroma Key Props</strong>
+              <span>Teleprompter & video light rigs</span>
+            </div>
+            <span class="sticker-price-tag">+₹499</span>
+          </button>
+        </div>
+
+        <div class="childish-cart-summary" id="childish-cart-summary" style="display:none;">
+          <div class="cart-left">
+            <span>Selected Goodies Total:</span>
+            <strong id="childish-cart-price">+₹0</strong>
+          </div>
+          <a href="#booking" class="btn-childish-primary">
+            <span>Book With Goodies! 🚀</span>
           </a>
         </div>
       </div>

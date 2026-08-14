@@ -1,11 +1,16 @@
 /* ==========================================================================
-   A P STUDIO KOLKATA — RESPONSIVE STYLES (FIX PRICING & CONTAINER BOUNDS)
+   A P STUDIO KOLKATA — RESPONSIVE STYLES (PLAYFUL CHILDISH PRICING)
    ========================================================================== */
 
 @media (max-width: 1200px) {
-  .candid-grid-4col {
+  .candid-grid-4col,
+  .childish-pricing-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 24px;
+  }
+
+  .childish-stickers-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .candid-grid-3col {
@@ -85,32 +90,23 @@
     font-size: 2.4rem;
   }
 
-  .candid-grid-4col {
+  .candid-grid-4col,
+  .childish-pricing-grid,
+  .childish-stickers-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .pricing-toggle-wrapper {
-    flex-direction: column;
-    gap: 10px;
-    padding: 12px 18px;
+  .childish-duration-bar {
+    padding: 14px 16px;
     width: 100%;
   }
 
-  .fun-addons-wrapper {
+  .childish-addons-box {
     padding: 24px 18px;
   }
 
-  .addons-pills-grid {
-    flex-direction: column;
-  }
-
-  .addon-pill-btn {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .addons-total-bar {
+  .childish-cart-summary {
     flex-direction: column;
     gap: 12px;
     text-align: center;
