@@ -1,27 +1,27 @@
 /* ==========================================================================
-   A P STUDIO NOTTING HILL — DATA STORE (PRICING IN INDIAN RUPEES ₹)
+   A P STUDIO KOLKATA — DATA STORE (LOCATION: KOLKATA, INDIA)
    ========================================================================== */
 
 const CANDID_DATA = {
   brand: {
     name: "A P STUDIO",
-    location: "Notting Hill, London W11 2PS",
-    address: "302 Westbourne Grove, London W11 2PS",
-    phone: "07412 620276",
-    email: "hello@apstudio.co.uk",
-    tagline: "London's Premier Self-Portrait Studio & Creative Production House",
+    location: "Park Street, Kolkata 700071",
+    address: "18 Park Street, Kolkata, West Bengal 700071, India",
+    phone: "+91 98300 12345 / 033 2227 8900",
+    email: "hello@apstudio.co.in",
+    tagline: "Kolkata's Premier Self-Portrait Studio & Creative Production House",
     rating: 4.9,
     reviewsCount: 330
   },
 
   announcement: {
-    text: "☀️ AUGUST SUMMER BUNDLE NOW LIVE • 30% OFF ALL SESSIONS WITH CODE 'SUMMER30' | Book Your Slot →",
+    text: "☀️ AUGUST SUMMER BUNDLE NOW LIVE • 30% OFF ALL SESSIONS AT OUR KOLKATA STUDIO | Book Your Slot →",
     link: "#booking"
   },
 
   hero: {
-    badge: "NOTTING HILL, WEST LONDON",
-    heading: "A self portrait studio in London where the photographer is you.",
+    badge: "PARK STREET, KOLKATA",
+    heading: "A self portrait studio in Kolkata where the photographer is you.",
     subheading: "Take control of your story.",
     priceTag: "Sessions from ₹1,499.",
     cta: "BOOK A SESSION"
@@ -38,7 +38,7 @@ const CANDID_DATA = {
       step: "02",
       title: "Private 45-Min Studio Suite",
       subtitle: "100% PRIVACY • NO PHOTOGRAPHER",
-      desc: "Step into your private studio suite. Play your own Spotify playlist, change outfits, adjust props, and take photos at your own pace with zero awkwardness."
+      desc: "Step into your private studio suite in Kolkata. Play your own Spotify playlist, change outfits, adjust props, and take photos at your own pace with zero awkwardness."
     },
     {
       step: "03",
@@ -143,7 +143,7 @@ const CANDID_DATA = {
     },
     {
       id: "group",
-      name: "Group & Hen Party",
+      name: "Group & Celebration",
       price: "₹4,999",
       duration: "75 MINS",
       capacity: "UP TO 8 GUESTS",
@@ -153,7 +153,7 @@ const CANDID_DATA = {
         "75-Minute Exclusive Studio Suite Hire",
         "500+ Digital Photos Delivered Same Day",
         "8 Professional Retouched Edits Included",
-        "Complimentary Bottle of Chilled Prosecco",
+        "Complimentary Mocktails / Refreshments",
         "Included Physical RetroBooth Strip Prints",
         "Party Playlist & Custom Lighting Setup"
       ]
@@ -162,25 +162,25 @@ const CANDID_DATA = {
 
   corporate: {
     title: "Headshots Your Team Will Actually Enjoy.",
-    desc: "Say goodbye to rigid corporate photoshoots. A P STUDIO gives your employees complete privacy to take confidence-boosting headshots in Notting Hill or at your office.",
+    desc: "Say goodbye to rigid corporate photoshoots. A P STUDIO gives your employees complete privacy to take confidence-boosting headshots at our Park Street, Kolkata studio or at your office.",
     tiers: [
       {
         name: "The Express Team",
         price: "From ₹14,999",
         teamSize: "UP TO 10 EMPLOYEES",
-        desc: "Half-day private studio suite booking in Notting Hill. Each team member gets 15 minutes of private self-portrait time with live confidence preview."
+        desc: "Half-day private studio suite booking in Park Street, Kolkata. Each team member gets 15 minutes of private self-portrait time with live confidence preview."
       },
       {
         name: "The Bespoke Studio Hire",
         price: "From ₹24,999",
         teamSize: "UP TO 25 EMPLOYEES",
-        desc: "Full-day studio suite hire with dedicated studio host, light refreshments, multi-backdrop sets, and same-day delivery of all high-res files."
+        desc: "Full-day studio suite hire in Kolkata with dedicated studio host, light refreshments, multi-backdrop sets, and same-day delivery of all high-res files."
       },
       {
         name: "On-Site Pop-Up Studio",
         price: "Custom Quote",
         teamSize: "25+ EMPLOYEES",
-        desc: "We bring our studio strobe lights, backdrop system, and wireless trigger tech straight to your corporate offices."
+        desc: "We bring our studio strobe lights, backdrop system, and wireless trigger tech straight to your corporate offices anywhere in Kolkata & Eastern India."
       }
     ]
   },
@@ -211,7 +211,7 @@ const CANDID_DATA = {
       image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Hen Party & Group Celebration",
+      title: "Birthday & Group Celebration",
       category: "Group Hire",
       tag: "Warm Ivory",
       image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80"
@@ -226,35 +226,35 @@ const CANDID_DATA = {
 
   reviews: [
     {
-      author: "Aimee Barrett",
-      location: "Notting Hill, London",
+      author: "Ananya Roy",
+      location: "Park Street, Kolkata",
       session: "Solo Self-Portrait",
-      quote: "It's like being inside a self-portrait dream land! Having no photographer made me feel 100% confident. I took 300 photos in 45 minutes and got them all the same day."
+      quote: "It's like being inside a self-portrait dream land! Having no photographer in Kolkata made me feel 100% confident. Took 300 photos in 45 minutes and got them all the same day."
     },
     {
-      author: "Marcus Vance",
-      location: "Kensington, London",
+      author: "Pritam Mukhopadhyay",
+      location: "Salt Lake, Kolkata",
       session: "LinkedIn Headshots",
-      quote: "Best headshots I've ever had. No awkward small talk or fake poses. Just me, a remote clicker, and professional lighting. Highly recommend A P STUDIO!"
+      quote: "Best headshots I've ever had. No awkward small talk or fake poses. Just me, a remote clicker, and professional lighting. Highly recommend A P STUDIO Kolkata!"
     },
     {
-      author: "Elena & David",
-      location: "Chelsea, London",
+      author: "Rohan & Devika",
+      location: "Ballygunge, Kolkata",
       session: "Duo & Couples",
-      quote: "We came for our anniversary shoot and had so much fun! Playing our own music while clicking the shutter was such an amazing date idea."
+      quote: "We came for our anniversary shoot at Park Street and had so much fun! Playing our own music while clicking the shutter was such an amazing date idea."
     },
     {
-      author: "Sophia Chen",
-      location: "Soho, London",
+      author: "Shreya Sen",
+      location: "New Town, Kolkata",
       session: "Personal Branding",
-      quote: "The backdrop colors and strobe lighting are world class. I got 5 retouched edits that transformed my website and social media presence."
+      quote: "The backdrop colors and strobe lighting are world class. I got 5 retouched edits that transformed my website and Instagram presence."
     }
   ],
 
   faqs: [
     {
-      question: "How does a self-portrait studio session work?",
-      answer: "You get a private studio suite room to yourself. The studio strobe lights and camera are already set up and calibrated. You hold a small wireless clicker in your hand and see your pose live on a 32-inch confidence monitor. When you press the button, the shutter fires!"
+      question: "How does a self-portrait studio session work in Kolkata?",
+      answer: "You get a private studio suite room to yourself at Park Street, Kolkata. The studio strobe lights and camera are already set up and calibrated. You hold a small wireless clicker in your hand and see your pose live on a 32-inch confidence monitor. When you press the button, the shutter fires!"
     },
     {
       question: "Is there a photographer in the room with me?",
@@ -270,7 +270,7 @@ const CANDID_DATA = {
     },
     {
       question: "Can I bring outfit changes or pets?",
-      answer: "Yes! You are welcome to bring as many outfit changes as you like during your slot. Our Notting Hill studio is also 100% pet-friendly!"
+      answer: "Yes! You are welcome to bring as many outfit changes as you like during your slot. Our Kolkata studio is also 100% pet-friendly!"
     }
   ]
 };
