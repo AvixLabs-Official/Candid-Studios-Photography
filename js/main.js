@@ -20,62 +20,40 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
 });
 
-/* Exact Seamless Infinite Gallery Carousel (Matching gallery demo.mp4 video 1-to-1) */
+/* Truly Infinite Continuous Gallery Carousel (Real-Time Center Detector) */
 function initGalleryCarousel() {
-  const track = document.getElementById('gallery-carousel-track');
-  if (!track) return;
-
-  const cards = Array.from(track.children);
+  const cards = document.querySelectorAll('.gallery-carousel-card');
   if (cards.length === 0) return;
 
-  const totalOriginal = cards.length / 2; // 6 cards per set
-  let activeIndex = 1;
+  function updateCenterFocusCard() {
+    const viewportCenter = window.innerWidth / 2;
+    let closestCard = null;
+    let minDistance = Infinity;
 
-  function updateCarouselState(enableTransition = true) {
-    if (enableTransition) {
-      track.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
-    } else {
-      track.style.transition = 'none';
-    }
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const distance = Math.abs(viewportCenter - cardCenter);
 
-    cards.forEach((card, idx) => {
-      // Highlight matching centered card
-      const normalizedIdx = idx % totalOriginal;
-      const normalizedActive = activeIndex % totalOriginal;
-      if (normalizedIdx === normalizedActive && (idx === activeIndex || idx === activeIndex + totalOriginal)) {
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestCard = card;
+      }
+    });
+
+    cards.forEach(card => {
+      if (card === closestCard) {
         card.classList.add('center-focus');
       } else {
         card.classList.remove('center-focus');
       }
     });
 
-    const viewportWidth = window.innerWidth;
-    const cardWidth = 320;
-    const cardGap = 36;
-    const itemFullWidth = cardWidth + cardGap;
-    
-    const centerOffset = (viewportWidth / 2) - (cardWidth / 2) - (activeIndex * itemFullWidth);
-    track.style.transform = `translateX(${centerOffset}px)`;
+    requestAnimationFrame(updateCenterFocusCard);
   }
 
-  // Initial positioning
-  updateCarouselState(false);
-
-  // Auto transition every 2.4 seconds with infinite wrap
-  setInterval(() => {
-    activeIndex++;
-    updateCarouselState(true);
-
-    // When we finish set 1 and cross into set 2, reset activeIndex seamlessly without visual jump
-    if (activeIndex >= totalOriginal + 1) {
-      setTimeout(() => {
-        activeIndex = 1;
-        updateCarouselState(false);
-      }, 820);
-    }
-  }, 2400);
-
-  window.addEventListener('resize', () => updateCarouselState(false));
+  // Start continuous loop
+  requestAnimationFrame(updateCenterFocusCard);
 }
 
 /* Hero Polaroid Automated Image Slideshow (Exact behavior from video) */
