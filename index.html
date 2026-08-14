@@ -275,96 +275,74 @@
     </div>
   </section>
 
-  <!-- Transparent Pricing Packages Section (Professional Vector SVG Design) -->
-  <section class="childish-pricing-section" id="pricing">
+  <!-- Transparent Pricing Packages Section (100% Clean Professional Studio Design) -->
+  <section class="candid-section" id="pricing" style="background:var(--bg-warm-secondary);">
     <div class="container">
-      <div class="childish-header-box">
-        <span class="childish-kicker">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-          <span>TRANSPARENT PRICING</span>
-        </span>
-        <h2 class="childish-heading">Session Packages & Rates</h2>
-        <p class="childish-subheading">No hidden fees. Every session includes private studio access, high-resolution raw photos/video clips, and same-day delivery.</p>
-
-        <!-- Duration Selector Bar -->
-        <div class="childish-duration-bar">
-          <span class="duration-title">Select Session Duration:</span>
-          <div class="duration-pills">
-            <button class="candy-pill-btn active" onclick="switchChildishDuration(this, 'standard')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-              <span>Standard Session (45-60 min)</span>
-            </button>
-            <button class="candy-pill-btn" onclick="switchChildishDuration(this, 'deluxe')">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <span>Extended Session (90-120 min)</span>
-              <span class="candy-discount-badge">SAVE 15%</span>
-            </button>
-          </div>
+      <div style="text-align:center;">
+        <span class="section-kicker" style="text-align:center;">TRANSPARENT PRICING</span>
+        <h2 class="section-heading" style="text-align:center;">Session Packages & Rates</h2>
+        <p class="section-subheading" style="text-align:center; margin:0 auto 24px;">Every session includes full private studio access, 4K raw video clips or high-res photo delivery on the same day.</p>
+        
+        <!-- Interactive Billing Toggle Switch: Single Session vs 3-Shoot Pass -->
+        <div class="pricing-toggle-wrapper">
+          <span class="toggle-label active" id="toggle-label-single">Single Session</span>
+          <button class="pricing-toggle-btn" id="pricing-toggle-switch" aria-label="Toggle Pricing Billing Mode">
+            <span class="toggle-slider"></span>
+          </button>
+          <span class="toggle-label" id="toggle-label-bundle">
+            3-Shoot Studio Bundle Pass
+            <span class="save-badge">SAVE 20%</span>
+          </span>
         </div>
       </div>
 
-      <!-- Pricing Cards Grid -->
-      <div class="childish-pricing-grid" id="pricing-grid">
+      <!-- 4-Column Professional Pricing Cards Grid -->
+      <div class="candid-grid-4col" id="pricing-grid">
         <!-- Rendered dynamically -->
       </div>
 
-      <!-- Add-on Customizer Box -->
-      <div class="childish-addons-box">
-        <div class="addons-box-header">
-          <span class="candy-tag">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-            <span>CUSTOMIZE YOUR SESSION</span>
-          </span>
-          <h3>Popular Add-on Options</h3>
-          <p>Tap any option below to customize your booking package.</p>
+      <!-- Professional Session Add-ons Customizer -->
+      <div class="fun-addons-wrapper">
+        <div class="addons-header">
+          <span class="addons-tag">CUSTOMIZE YOUR SESSION</span>
+          <h3>Popular Session Add-ons</h3>
+          <p>Select any add-on below to customize your booking package.</p>
         </div>
 
-        <div class="childish-stickers-grid">
-          <button class="doodle-sticker-btn" onclick="toggleChildishSticker(this, 299)" data-item="RetroBooth Photo Strips">
-            <svg class="sticker-svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-            <div class="sticker-info">
-              <strong>RetroBooth Strips</strong>
-              <span>Physical photo prints on the spot</span>
-            </div>
-            <span class="sticker-price-tag">+₹299</span>
+        <div class="addons-pills-grid">
+          <button class="addon-pill-btn" onclick="toggleAddon(this, 299)" data-addon="Physical RetroBooth Prints">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <span>RetroBooth Strip Prints</span>
+            <span class="addon-price">+₹299</span>
           </button>
 
-          <button class="doodle-sticker-btn" onclick="toggleChildishSticker(this, 299)" data-item="Magical Glow Retouching">
-            <svg class="sticker-svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
-            <div class="sticker-info">
-              <strong>Glow Retouching</strong>
-              <span>5 extra skin & color retouched edits</span>
-            </div>
-            <span class="sticker-price-tag">+₹299</span>
+          <button class="addon-pill-btn" onclick="toggleAddon(this, 299)" data-addon="Extra Retouched Edit">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+            <span>Extra Retouched Edit</span>
+            <span class="addon-price">+₹299</span>
           </button>
 
-          <button class="doodle-sticker-btn" onclick="toggleChildishSticker(this, 799)" data-item="30 Mins Extra Playtime">
-            <svg class="sticker-svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <div class="sticker-info">
-              <strong>Extra Studio Time</strong>
-              <span>30 additional minutes in studio</span>
-            </div>
-            <span class="sticker-price-tag">+₹799</span>
+          <button class="addon-pill-btn" onclick="toggleAddon(this, 799)" data-addon="Extra 30 Mins Studio Time">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Extra 30 Mins Studio Time</span>
+            <span class="addon-price">+₹799</span>
           </button>
 
-          <button class="doodle-sticker-btn" onclick="toggleChildishSticker(this, 499)" data-item="Chroma VFX Props">
-            <svg class="sticker-svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
-            <div class="sticker-info">
-              <strong>Chroma Key Gear</strong>
-              <span>Teleprompter & video light rigs</span>
-            </div>
-            <span class="sticker-price-tag">+₹499</span>
+          <button class="addon-pill-btn" onclick="toggleAddon(this, 499)" data-addon="Teleprompter & Mic Rig">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+            <span>Teleprompter & Mic Rig</span>
+            <span class="addon-price">+₹499</span>
           </button>
         </div>
 
-        <div class="childish-cart-summary" id="childish-cart-summary" style="display:none;">
-          <div class="cart-left">
+        <div class="addons-total-bar" id="addons-total-bar" style="display:none;">
+          <div class="total-info">
             <span>Selected Add-ons Total:</span>
-            <strong id="childish-cart-price">+₹0</strong>
+            <strong id="addons-total-price">+₹0</strong>
           </div>
-          <a href="#booking" class="btn-childish-primary">
-            <span>Book Package With Add-ons</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <a href="#booking" class="btn-candid-black btn-sm">
+            <span>Apply to Booking</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
       </div>

@@ -4,8 +4,8 @@
 
 let activeColor = 'ivory';
 let clickTotal = 0;
-let childishDurationMode = 'standard';
-let childishStickersTotal = 0;
+let isBundleMode = false;
+let selectedAddonsSum = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderMainShootsGrid();
   renderHowItWorksGrid();
   renderBackdropsGrid();
-  renderChildishPricingGrid();
+  renderPricingGrid();
+  initPricingToggle();
   renderCorporateGrid();
   renderReviewsGrid();
   renderFaqsAccordion();
@@ -190,48 +191,55 @@ function renderBackdropsGrid() {
   `).join('');
 }
 
-/* Switch Pricing Duration Level */
-function switchChildishDuration(btn, mode) {
-  document.querySelectorAll('.candy-pill-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  childishDurationMode = mode;
-  renderChildishPricingGrid();
+/* Interactive Pricing Billing Toggle Switch */
+function initPricingToggle() {
+  const switchBtn = document.getElementById('pricing-toggle-switch');
+  const labelSingle = document.getElementById('toggle-label-single');
+  const labelBundle = document.getElementById('toggle-label-bundle');
+
+  switchBtn?.addEventListener('click', () => {
+    isBundleMode = !isBundleMode;
+    switchBtn.classList.toggle('active', isBundleMode);
+    labelSingle?.classList.toggle('active', !isBundleMode);
+    labelBundle?.classList.toggle('active', isBundleMode);
+    renderPricingGrid();
+  });
 }
 
-/* Toggle Sticker Add-ons */
-function toggleChildishSticker(btn, price) {
+/* Add-ons Calculator */
+function toggleAddon(btn, amount) {
   btn.classList.toggle('active');
   if (btn.classList.contains('active')) {
-    childishStickersTotal += price;
+    selectedAddonsSum += amount;
   } else {
-    childishStickersTotal -= price;
+    selectedAddonsSum -= amount;
   }
 
-  const summary = document.getElementById('childish-cart-summary');
-  const priceEl = document.getElementById('childish-cart-price');
+  const totalBar = document.getElementById('addons-total-bar');
+  const totalPriceEl = document.getElementById('addons-total-price');
 
-  if (childishStickersTotal > 0) {
-    if (summary) summary.style.display = 'flex';
-    if (priceEl) priceEl.textContent = `+₹${childishStickersTotal.toLocaleString()}`;
+  if (selectedAddonsSum > 0) {
+    if (totalBar) totalBar.style.display = 'flex';
+    if (totalPriceEl) totalPriceEl.textContent = `+₹${selectedAddonsSum.toLocaleString()}`;
   } else {
-    if (summary) summary.style.display = 'none';
+    if (totalBar) totalBar.style.display = 'none';
   }
 }
 
-/* Professional & Clean Vector SVG Pricing Renderer */
-function renderChildishPricingGrid() {
+/* Professional & Clean Pricing Cards Renderer (Matching candidstudios.co.uk 1-to-1) */
+function renderPricingGrid() {
   const container = document.getElementById('pricing-grid');
   if (!container || !CANDID_DATA?.packages) return;
 
   container.innerHTML = CANDID_DATA.packages.map(p => {
     let rawNum = parseInt(p.price.replace(/[^0-9]/g, ''), 10);
-    let finalPrice = p.price;
-    let durationLabel = p.duration;
+    let displayPrice = p.price;
+    let durationTag = p.duration;
 
-    if (childishDurationMode === 'deluxe') {
-      let deluxeNum = Math.round(rawNum * 1.5);
-      finalPrice = `₹${deluxeNum.toLocaleString()}`;
-      durationLabel = '120 Mins Extended';
+    if (isBundleMode) {
+      let bundlePerShoot = Math.round(rawNum * 0.8);
+      displayPrice = `₹${bundlePerShoot.toLocaleString()}`;
+      durationTag = `per shoot (3-shoot pass)`;
     }
 
     return `
@@ -244,11 +252,10 @@ function renderChildishPricingGrid() {
         </div>
         
         <div class="plan-price-box">
-          <span class="plan-amount">${finalPrice}</span>
-          <span class="plan-duration">/ ${durationLabel}</span>
+          <span class="plan-amount">${displayPrice}</span>
+          <span class="plan-duration">/ ${durationTag}</span>
         </div>
 
-        <!-- Clean SVG Checkmark List -->
         <ul class="plan-list">
           ${p.features.map(f => `
             <li>

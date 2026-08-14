@@ -2,7 +2,7 @@
    A P STUDIO KOLKATA — EXACT 1-TO-1 VISUAL REPLICA WITH PROFESSIONAL SVG ICONS
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
   /* Color Tokens */
@@ -24,12 +24,11 @@
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-doodle: 'Fredoka One', cursive, var(--font-sans);
 
   /* Spacing & Utilities */
   --radius-sm: 4px;
-  --radius-md: 12px;
-  --radius-lg: 24px;
+  --radius-md: 8px;
+  --radius-lg: 20px;
   --radius-pill: 50px;
   --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --shadow-sm: 0 4px 12px rgba(20, 20, 20, 0.04);
@@ -620,435 +619,324 @@ img {
 }
 
 /* ==========================================================================
-   UNIQUE PLAYFUL CHILDISH & DOODLE PRICING SECTION
+   100% CLEAN PROFESSIONAL STUDIO TRANSPARENT PRICING
    ========================================================================== */
 
-.childish-pricing-section {
-  padding: 96px 0;
-  background-color: #FFFDF9;
-  background-image: radial-gradient(#E8E2D5 1.2px, transparent 1.2px);
-  background-size: 24px 24px;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 3px solid #141414;
-}
-
-/* Floating Doodle Background Emojis */
-.doodle-bg-element {
-  position: absolute;
-  font-size: 2.4rem;
-  pointer-events: none;
-  opacity: 0.6;
-  z-index: 1;
-}
-
-.doodle-star-1 { top: 8%; left: 3%; animation: bounceDoodle 4s ease-in-out infinite alternate; }
-.doodle-balloon-1 { top: 12%; right: 4%; animation: bounceDoodle 5s ease-in-out infinite alternate-reverse; }
-.doodle-sparkle-1 { bottom: 10%; left: 4%; animation: bounceDoodle 6s ease-in-out infinite alternate; }
-.doodle-palette-1 { bottom: 12%; right: 3%; animation: bounceDoodle 4.5s ease-in-out infinite alternate-reverse; }
-
-@keyframes bounceDoodle {
-  0% { transform: translateY(0) rotate(-6deg); }
-  100% { transform: translateY(-15px) rotate(6deg); }
-}
-
-.childish-header-box {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 48px;
-  position: relative;
-  z-index: 2;
-}
-
-.childish-kicker {
-  font-family: var(--font-sans);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-accent);
+.pricing-toggle-wrapper {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.childish-heading {
-  font-family: var(--font-serif);
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  font-weight: 700;
-  color: #141414;
-  margin-bottom: 12px;
-  letter-spacing: -0.01em;
-}
-
-.childish-subheading {
-  font-size: 1.05rem;
-  color: #4A4A4A;
-  line-height: 1.6;
-  margin-bottom: 32px;
-}
-
-/* Playful Candy Duration Selector Bar */
-.childish-duration-bar {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+  gap: 16px;
   background: #FFFFFF;
-  border: 3px solid #141414;
-  padding: 16px 28px;
-  border-radius: var(--radius-lg);
-  box-shadow: 6px 6px 0px #141414;
-}
-
-.duration-title {
-  font-size: 0.84rem;
-  font-weight: 800;
-  color: #141414;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.duration-pills {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.candy-pill-btn {
-  background: #FAF7F2;
-  border: 2.5px solid #141414;
-  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  padding: 8px 20px;
   border-radius: var(--radius-pill);
-  font-size: 0.88rem;
-  font-weight: 800;
-  color: #141414;
-  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 40px;
+}
+
+.toggle-label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-muted);
   transition: var(--transition);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 3px 3px 0px #141414;
 }
 
-.candy-pill-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 5px 5px 0px #141414;
+.toggle-label.active {
+  color: var(--color-text);
+  font-weight: 700;
 }
 
-.candy-pill-btn.active {
-  background: #FFD966;
-  transform: translateY(-2px);
-  box-shadow: 5px 5px 0px #141414;
-}
-
-.candy-discount-badge {
-  background: #FF85A1;
-  color: #FFFFFF;
-  font-size: 0.65rem;
+.save-badge {
+  background: #F8E776;
+  color: #141414;
+  font-size: 0.62rem;
   font-weight: 800;
+  letter-spacing: 0.08em;
   padding: 2px 8px;
   border-radius: var(--radius-pill);
-  border: 1.5px solid #141414;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Playful Comic Doodle Cards Grid */
-.childish-pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 56px;
+.pricing-toggle-btn {
+  width: 48px;
+  height: 26px;
+  background: var(--bg-warm-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
   position: relative;
-  z-index: 2;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-.childish-card {
-  border: 3px solid #141414;
+.pricing-toggle-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.toggle-slider {
+  width: 20px;
+  height: 20px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.pricing-toggle-btn.active .toggle-slider {
+  transform: translateX(21px);
+}
+
+.pricing-item-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 32px 22px 28px;
+  padding: 36px 28px;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-  box-shadow: 6px 6px 0px #141414;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.childish-card:hover {
-  transform: translateY(-8px) rotate(-1.5deg);
-  box-shadow: 10px 10px 0px #141414;
+.pricing-item-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
 }
 
-.childish-card.super-featured {
-  transform: translateY(-6px);
-  box-shadow: 8px 8px 0px #141414;
+.pricing-item-card.popular {
+  background: var(--bg-dark);
+  color: var(--color-light-text);
+  border-color: var(--bg-dark);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
 }
 
-.childish-card.super-featured:hover {
-  transform: translateY(-12px) rotate(1.5deg);
-  box-shadow: 12px 12px 0px #141414;
-}
-
-.childish-card-badge {
+.popular-ribbon {
   position: absolute;
-  top: -16px;
-  left: 20px;
-  border: 2.5px solid #141414;
-  padding: 4px 14px;
-  border-radius: var(--radius-pill);
-  font-size: 0.72rem;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: #FFFFFF;
+  font-size: 0.68rem;
   font-weight: 800;
-  color: #141414;
-  box-shadow: 3px 3px 0px #141414;
-  white-space: nowrap;
-}
-
-.childish-card-header {
-  margin-top: 8px;
-  margin-bottom: 16px;
-}
-
-.childish-card-sub {
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  padding: 4px 18px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(201, 106, 75, 0.35);
+}
+
+.pricing-header-box {
+  margin-bottom: 20px;
+}
+
+.plan-category-tag {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-.childish-card-title {
+.pricing-item-card.popular .plan-category-tag {
+  color: var(--color-gold);
+}
+
+.plan-title {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   font-weight: 700;
-  color: #141414;
-  line-height: 1.25;
+  line-height: 1.2;
+  color: var(--color-text);
 }
 
-.childish-price-box {
+.pricing-item-card.popular .plan-title {
+  color: #FFFFFF;
+}
+
+.plan-price-box {
   display: flex;
   align-items: baseline;
-  gap: 6px;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 2px dashed #141414;
+  gap: 8px;
+  margin: 16px 0 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.childish-amount {
+.pricing-item-card.popular .plan-price-box {
+  border-bottom-color: var(--border-dark);
+}
+
+.plan-amount {
   font-family: var(--font-serif);
-  font-size: 2.7rem;
+  font-size: 2.8rem;
   font-weight: 700;
   line-height: 1;
+  color: var(--color-accent);
 }
 
-.childish-duration {
-  font-size: 0.76rem;
-  font-weight: 800;
-  color: #141414;
+.pricing-item-card.popular .plan-amount {
+  color: var(--color-gold);
+}
+
+.plan-duration {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  color: var(--color-muted);
 }
 
-.childish-features-list {
+.pricing-item-card.popular .plan-duration {
+  color: rgba(250, 247, 242, 0.7);
+}
+
+.plan-list {
   list-style: none;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   flex-grow: 1;
 }
 
-.childish-features-list li {
+.plan-list li {
   font-size: 0.86rem;
-  font-weight: 600;
-  color: #141414;
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  line-height: 1.4;
+  gap: 10px;
+  line-height: 1.45;
+  color: var(--color-text);
 }
 
-.doodle-bullet {
-  font-size: 0.95rem;
+.pricing-item-card.popular .plan-list li {
+  color: rgba(250, 247, 242, 0.9);
+}
+
+.plan-list li svg {
   flex-shrink: 0;
+  margin-top: 3px;
 }
 
-.btn-childish-card-action {
-  border: 2.5px solid #141414;
-  border-radius: var(--radius-pill);
-  padding: 12px 20px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: var(--transition);
-  box-shadow: 3px 3px 0px #141414;
-  cursor: pointer;
-  width: 100%;
-}
-
-.btn-childish-card-action:hover {
-  transform: translateY(-2px);
-  box-shadow: 5px 5px 0px #141414;
-  background-color: #FFD966 !important;
-  color: #141414 !important;
-}
-
-/* Playful "Pick Your Goodies" Add-on Box */
-.childish-addons-box {
+/* Professional Add-ons Wrapper */
+.fun-addons-wrapper {
+  margin-top: 56px;
   background: #FFFFFF;
-  border: 3px solid #141414;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 36px;
-  box-shadow: 8px 8px 0px #141414;
-  position: relative;
-  z-index: 2;
+  padding: 32px 36px;
+  box-shadow: var(--shadow-sm);
 }
 
-.addons-box-header {
-  margin-bottom: 24px;
+.addons-header {
+  margin-bottom: 20px;
 }
 
-.candy-tag {
-  font-size: 0.72rem;
+.addons-tag {
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: #141414;
-  background: #FF85A1;
-  color: #FFFFFF;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  border: 1.5px solid #141414;
-  display: inline-block;
-  margin-bottom: 8px;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 6px;
 }
 
-.addons-box-header h3 {
+.addons-header h3 {
   font-family: var(--font-serif);
   font-size: 1.65rem;
   font-weight: 700;
-  color: #141414;
+  color: var(--color-text);
   margin-bottom: 4px;
 }
 
-.addons-box-header p {
-  font-size: 0.88rem;
-  color: #666666;
+.addons-header p {
+  font-size: 0.86rem;
+  color: var(--color-muted);
 }
 
-.childish-stickers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+.addons-pills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-bottom: 24px;
 }
 
-.doodle-sticker-btn {
-  background: #FAF7F2;
-  border: 2.5px solid #141414;
-  border-radius: var(--radius-md);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
+.addon-pill-btn {
+  background: var(--bg-warm-primary);
+  border: 1px solid var(--border-color);
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 4px 4px 0px #141414;
-  text-align: left;
 }
 
-.doodle-sticker-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 6px 6px 0px #141414;
-  background: #FFF9E6;
+.addon-pill-btn:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
-.doodle-sticker-btn.active {
-  background: #76D7C4;
-  box-shadow: 6px 6px 0px #141414;
+.addon-pill-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(201, 106, 75, 0.25);
 }
 
-.sticker-emoji {
-  font-size: 1.8rem;
+.addon-pill-btn.active svg {
+  stroke: #FFFFFF;
 }
 
-.sticker-info strong {
-  display: block;
-  font-size: 0.92rem;
-  font-weight: 800;
-  color: #141414;
-  line-height: 1.2;
+.addon-price {
+  font-weight: 700;
+  font-size: 0.78rem;
+  opacity: 0.9;
 }
 
-.sticker-info span {
-  display: block;
-  font-size: 0.76rem;
-  color: #4A4A4A;
-  margin-top: 2px;
-}
-
-.sticker-price-tag {
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #141414;
-  background: #FFFFFF;
-  border: 1.5px solid #141414;
-  padding: 2px 8px;
-  border-radius: var(--radius-pill);
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-.childish-cart-summary {
-  background: #FFD966;
-  border: 2.5px solid #141414;
+.addons-total-bar {
+  background: var(--bg-warm-secondary);
+  border: 1px solid var(--border-color);
   padding: 16px 24px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 4px 4px 0px #141414;
   animation: fadeIn 0.3s ease;
 }
 
-.cart-left {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: #141414;
+.total-info {
   display: flex;
   align-items: center;
   gap: 12px;
+  font-size: 0.92rem;
 }
 
-.cart-left strong {
-  font-size: 1.5rem;
-  color: #141414;
+.total-info strong {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--color-accent);
 }
 
-.btn-childish-primary {
-  background: #141414;
-  color: #FFFFFF;
-  font-size: 0.88rem;
-  font-weight: 800;
-  padding: 10px 22px;
-  border-radius: var(--radius-pill);
-  border: 2px solid #141414;
-  box-shadow: 3px 3px 0px #FFFFFF;
-  transition: var(--transition);
-}
-
-.btn-childish-primary:hover {
-  background: #FF85A1;
-  color: #FFFFFF;
-  transform: translateY(-2px);
-}
-
-/* Grids & Common Sections */
+/* Sections Base */
 .candid-section {
   padding: 88px 0;
 }
