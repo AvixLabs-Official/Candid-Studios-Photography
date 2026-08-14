@@ -1027,6 +1027,9 @@ img {
   border-radius: var(--radius-md);
   overflow: hidden;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .backdrop-item-card:hover {
@@ -1038,6 +1041,7 @@ img {
   height: 240px;
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .backdrop-thumb img {
@@ -1070,6 +1074,9 @@ img {
 
 .backdrop-info {
   padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .backdrop-title {
@@ -1077,6 +1084,7 @@ img {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 4px;
+  line-height: 1.25;
 }
 
 .backdrop-vibe {
@@ -1093,6 +1101,14 @@ img {
   font-size: 0.86rem;
   color: var(--color-muted);
   line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.backdrop-info button {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
 }
 
 /* Dark Corporate Box */
