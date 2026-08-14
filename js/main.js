@@ -199,9 +199,8 @@ function renderPricingGrid() {
 
   container.innerHTML = CANDID_DATA.packages.map(p => `
     <article class="pricing-item-card minimal-card ${p.featured ? 'popular' : ''}">
-      ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
-      
       <div class="pricing-header-box" style="margin-bottom:12px;">
+        ${p.featured ? `<span class="popular-ribbon">${p.tag}</span>` : ''}
         <span class="plan-category-tag" style="font-size:0.62rem;">${p.capacity}</span>
         <h3 class="plan-title" style="font-size:1.25rem;">${p.name}</h3>
       </div>
