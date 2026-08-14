@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CANDID STUDIOS NOTTING HILL — EXACT 1-TO-1 VISUAL REPLICA OF CANDIDSTUDIOS.CO.UK
+   A P STUDIO KOLKATA — EXACT 1-TO-1 VISUAL REPLICA WITH PROFESSIONAL SVG ICONS
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
@@ -97,13 +97,30 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
-.candid-announcement-bar a {
+.announcement-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-sun {
+  color: #F5A623;
+  flex-shrink: 0;
+}
+
+.mini-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 4px;
+}
+
+.announcement-link {
   color: var(--color-accent);
   text-decoration: underline;
-  margin-left: 4px;
 }
 
 /* Solid Black & Outline Buttons matching candidstudios.co.uk */
@@ -167,16 +184,6 @@ img {
   width: 100%;
   justify-content: center;
   padding: 14px;
-}
-
-.arrow {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.btn-candid-black:hover .arrow,
-.btn-candid-outline:hover .arrow {
-  transform: translateX(3px);
 }
 
 /* Header Navigation */
@@ -317,10 +324,7 @@ img {
   color: var(--color-text);
 }
 
-/* ==========================================================================
-   EXACT HERO SECTION STYLES (MATCHING USER VIDEO RECORDING 1-TO-1)
-   ========================================================================== */
-
+/* Exact Hero Section */
 .candid-hero-exact {
   padding: 88px 0 100px;
   background-color: var(--bg-warm-primary);
@@ -440,6 +444,7 @@ img {
   border-radius: 4px;
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   justify-content: center;
   transition: var(--transition);
   box-shadow: 0 4px 14px rgba(238, 138, 138, 0.35);
@@ -536,7 +541,7 @@ img {
   justify-content: space-between;
 }
 
-/* Yellow Tape / Sticker Badge "let's get candid" */
+/* Yellow Tape / Sticker Badge "welcome to A P STUDIO" */
 .sticker-lets-candid {
   position: absolute;
   bottom: -4px;
@@ -597,147 +602,6 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* Interactive Shutter Clicker Simulator Widget */
-.candid-hero-media {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  box-shadow: var(--shadow-lg);
-}
-
-.stage-frame {
-  position: relative;
-  width: 100%;
-  height: 360px;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  background: var(--bg-warm-primary);
-  border: 1px solid var(--border-color);
-}
-
-.stage-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.flash-overlay {
-  position: absolute;
-  inset: 0;
-  background: #FFFFFF;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 10;
-  transition: opacity 0.05s ease;
-}
-
-.flash-overlay.flashing {
-  opacity: 0.95;
-  transition: none;
-}
-
-.viewfinder-hud {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  right: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 5;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hud-rec {
-  background: rgba(20, 20, 20, 0.8);
-  color: #2E7D32;
-  padding: 4px 10px;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-}
-
-.hud-counter {
-  background: rgba(20, 20, 20, 0.8);
-  color: #FAF7F2;
-  padding: 4px 10px;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-}
-
-.stage-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 16px;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.shutter-click-btn {
-  background: var(--color-accent);
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  padding: 9px 20px;
-  border-radius: var(--radius-pill);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 14px rgba(201, 106, 75, 0.3);
-  transition: var(--transition);
-}
-
-.shutter-click-btn:hover {
-  background: var(--color-accent-hover);
-  transform: scale(1.04);
-}
-
-.color-swatches {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.swatch-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin-right: 4px;
-}
-
-.swatch {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.swatch.active,
-.swatch:hover {
-  border-color: var(--color-text);
-  transform: scale(1.15);
-}
-
-.stage-set-name {
-  display: block;
-  text-align: center;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-top: 10px;
 }
 
 /* As Featured In Press Banner */
@@ -1107,12 +971,19 @@ img {
   margin: 20px 0 28px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .retrobooth-checklist li {
   font-weight: 600;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-icon {
+  flex-shrink: 0;
 }
 
 .retrobooth-photo {
@@ -1213,9 +1084,9 @@ img {
 }
 
 .star-rating {
-  color: #F5A623;
-  font-size: 0.95rem;
-  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   margin-bottom: 14px;
 }
 
@@ -1277,13 +1148,12 @@ img {
   cursor: pointer;
 }
 
-.accordion-toggle {
-  font-size: 1.1rem;
-  color: var(--color-accent);
+.accordion-toggle-icon {
+  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
-.accordion-item.active .accordion-toggle {
+.accordion-item.active .accordion-toggle-icon {
   transform: rotate(45deg);
 }
 
@@ -1387,9 +1257,20 @@ img {
 .loc-details {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+}
+
+.loc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   font-size: 0.88rem;
   color: var(--color-text);
+}
+
+.loc-item svg {
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 
 .loc-guarantee {
@@ -1440,6 +1321,15 @@ img {
 .footer-rating {
   font-size: 0.8rem;
   color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
 }
 
 .footer-col h4 {

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CANDID STUDIOS NOTTING HILL — MAIN JAVASCRIPT ORCHESTRATOR
+   A P STUDIO KOLKATA — MAIN JAVASCRIPT ORCHESTRATOR
    ========================================================================== */
 
 let activeColor = 'ivory';
@@ -56,7 +56,7 @@ function initGalleryCarousel() {
   requestAnimationFrame(updateCenterFocusCard);
 }
 
-/* Hero Polaroid Automated Image Slideshow (Exact behavior from video) */
+/* Hero Polaroid Automated Image Slideshow */
 function initHeroSlideshow() {
   const imgEl = document.getElementById('hero-slideshow-img');
   if (!imgEl) return;
@@ -143,7 +143,8 @@ function renderBackdropsGrid() {
         <span class="backdrop-vibe">${b.tag}</span>
         <p class="backdrop-text">${b.desc}</p>
         <button onclick="switchBackdrop('${b.id}')" class="btn-candid-outline" style="margin-top:16px; width:100%; justify-content:center; padding:8px 14px; font-size:0.78rem;">
-          Try in Stage →
+          <span>Try in Stage</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </button>
       </div>
     </article>
@@ -177,7 +178,7 @@ function renderPricingGrid() {
 
       <a href="#booking" onclick="selectPackageForBooking('${p.name}')" class="btn-candid-black" style="margin-top:auto; justify-content:center; ${p.featured ? 'background:var(--color-accent); border-color:var(--color-accent);' : ''}">
         <span>Book ${p.name}</span>
-        <span class="arrow">→</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
     </article>
   `).join('');
@@ -200,24 +201,9 @@ function renderCorporateGrid() {
       <div class="corp-limit">${t.teamSize}</div>
       <p class="corp-text">${t.desc}</p>
       <a href="#booking" onclick="selectPackageForBooking('Corporate - ${t.name}')" class="btn-candid-outline" style="margin-top:18px; color:#FAF7F2; border-color:rgba(250,247,242,0.3); width:100%; justify-content:center;">
-        <span>Inquire for Team →</span>
+        <span>Inquire for Team</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </a>
-    </article>
-  `).join('');
-}
-
-/* Render Gallery */
-function renderGalleryGrid() {
-  const container = document.getElementById('gallery-grid');
-  if (!container || !CANDID_DATA?.gallery) return;
-
-  container.innerHTML = CANDID_DATA.gallery.map(g => `
-    <article class="gallery-item-card">
-      <img src="${g.image}" alt="${g.title}" loading="lazy">
-      <div class="gallery-card-overlay">
-        <span class="gallery-card-meta">${g.tag} • ${g.category}</span>
-        <h4 class="gallery-card-title">${g.title}</h4>
-      </div>
     </article>
   `).join('');
 }
@@ -227,9 +213,11 @@ function renderReviewsGrid() {
   const container = document.getElementById('reviews-grid');
   if (!container || !CANDID_DATA?.reviews) return;
 
+  const starSvgs = Array(5).fill('<svg width="14" height="14" viewBox="0 0 24 24" fill="#F5A623" stroke="#F5A623" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>').join('');
+
   container.innerHTML = CANDID_DATA.reviews.map(r => `
     <article class="review-item-card">
-      <div class="star-rating">★★★★★</div>
+      <div class="star-rating">${starSvgs}</div>
       <p class="quote-text">"${r.quote}"</p>
       <div class="author-footer">
         <div>
@@ -251,7 +239,7 @@ function renderFaqsAccordion() {
     <article class="accordion-item ${i === 0 ? 'active' : ''}">
       <div class="accordion-question" onclick="toggleAccordion(this)">
         <span>${f.question}</span>
-        <span class="accordion-toggle">+</span>
+        <svg class="accordion-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
       </div>
       <div class="accordion-answer">
         <p>${f.answer}</p>
@@ -300,15 +288,6 @@ function triggerShutterClick() {
     osc.start();
     osc.stop(ctx.currentTime + 0.05);
   } catch (e) {}
-
-  // Scale image slightly
-  const activeImg = document.getElementById('stage-active-img');
-  if (activeImg) {
-    activeImg.style.transform = 'scale(0.97)';
-    setTimeout(() => {
-      activeImg.style.transform = 'scale(1)';
-    }, 140);
-  }
 }
 
 function switchBackdrop(id) {
@@ -365,13 +344,13 @@ function initBookingForm() {
       const data = await res.json();
       if (data.success) {
         triggerShutterClick();
-        alert(`📸 BOOKING RESERVED!\n${data.message}`);
+        alert(`BOOKING RESERVED!\n${data.message}`);
         form.reset();
       } else {
         alert(`Note: ${data.message || 'Please verify your information.'}`);
       }
     } catch (err) {
-      alert(`Session Reserved! Thank you ${name}, your booking for ${packageType} has been received. Our Notting Hill studio host will email your confirmation shortly at ${email}.`);
+      alert(`Session Reserved! Thank you ${name}, your booking for ${packageType} has been received. Our Kolkata studio host will email your confirmation shortly at ${email}.`);
       form.reset();
     } finally {
       if (btn) btn.disabled = false;
