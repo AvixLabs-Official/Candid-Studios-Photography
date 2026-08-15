@@ -1,13 +1,13 @@
 /* ==========================================================================
-   RONGBONG STUDIO BAGHAJATIN, KOLKATA — DATA STORE (EST-2016)
+   RONGBONG STUDIO DHAKURIA, KOLKATA — DATA STORE (EST-2016)
    (EXPERT PHOTOGRAPHER BLENDING STORYTELLING & ARTISTRY)
    ========================================================================== */
 
 const CANDID_DATA = {
   brand: {
     name: "RongBong Studio",
-    location: "Baghajatin, Kolkata 700086",
-    address: "51, Baghajatin Station Road, Near Talpukur Primary School & Canara Bank, Baghajatin Colony, Kolkata 700086",
+    location: "Dhakuria, Kolkata 700031",
+    address: "Dhakuria, Kolkata, West Bengal 700031",
     phone: "+91 78900 01651 / +91 98300 12345",
     email: "hello@rongbongstudio.com",
     tagline: "Expert photographer blending storytelling and artistry in portrait, wedding, maternity, newborn shoots and videography services. Est-2016",
@@ -21,7 +21,7 @@ const CANDID_DATA = {
   },
 
   hero: {
-    badge: "ESTABLISHED 2016 • BAGHAJATIN, KOLKATA",
+    badge: "ESTABLISHED 2016 • DHAKURIA, KOLKATA",
     heading: "Expert photographer blending storytelling and artistry.",
     subheading: "Specializing in portrait, wedding, maternity, newborn shoots and videography services. Est-2016",
     priceTag: "Sessions from ₹1,499.",
@@ -211,7 +211,7 @@ const CANDID_DATA = {
         name: "Express Team Shoot",
         price: "From ₹14,999",
         teamSize: "UP TO 10 EMPLOYEES",
-        desc: "Half-day private studio floor booking in Baghajatin, Kolkata. Each employee gets Chroma video clips and executive headshots."
+        desc: "Half-day private studio floor booking in Dhakuria, Kolkata. Each employee gets Chroma video clips and executive headshots."
       },
       {
         name: "Bespoke Commercial Production",
@@ -270,13 +270,13 @@ const CANDID_DATA = {
   reviews: [
     {
       author: "Siddharth & Sneha",
-      location: "Baghajatin Colony, Kolkata",
+      location: "Dhakuria, Kolkata",
       session: "Pre-Wedding Shoot",
       quote: "We had our pre-wedding shoot at RongBong Studio! The artistic lighting, privacy, and warm ivory set made our photos look like a magazine cover. Highly recommended!"
     },
     {
       author: "Pooja Banerjee",
-      location: "Baghajatin Station Road, Kolkata",
+      location: "Dhakuria, Kolkata",
       session: "Maternity & Newborn",
       quote: "The team created such a warm, comfortable environment for my maternity photoshoot and baby pictures. Absolutely loved the storytelling photos!"
     },
@@ -301,7 +301,7 @@ const CANDID_DATA = {
     },
     {
       question: "Where is RongBong Studio located in Kolkata?",
-      answer: "RongBong Studio is located at 51, Baghajatin Station Road, near Talpukur Primary School & Canara Bank, Baghajatin Colony, Kolkata - 700086 (2 mins from Baghajatin Railway Station)."
+      answer: "RongBong Studio is located in Dhakuria, Kolkata, West Bengal 700031 (near Dhakuria Railway Station & Bus Stop)."
     },
     {
       question: "Are props and gown drapings available for Maternity and Newborn shoots?",

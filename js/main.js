@@ -401,7 +401,7 @@ function initBookingForm() {
         alert(`Note: ${data.message || 'Please verify your information.'}`);
       }
     } catch (err) {
-      alert(`Session Reserved! Thank you ${name}, your booking for ${packageType} has been received. Our Baghajatin studio team will email your confirmation shortly at ${email}.`);
+      alert(`Session Reserved! Thank you ${name}, your booking for ${packageType} has been received. Our Dhakuria studio team will email your confirmation shortly at ${email}.`);
       form.reset();
     } finally {
       if (btn) btn.disabled = false;
