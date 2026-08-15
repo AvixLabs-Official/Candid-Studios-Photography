@@ -1,22 +1,22 @@
 /* ==========================================================================
-   RONGBONG STUDIO DHAKURIA, KOLKATA — DATA STORE (EST-2016)
+   A B STUDIO DHAKURIA, KOLKATA — DATA STORE (EST-2016)
    (EXPERT PHOTOGRAPHER BLENDING STORYTELLING & ARTISTRY)
    ========================================================================== */
 
 const CANDID_DATA = {
   brand: {
-    name: "RongBong Studio",
+    name: "A B Studio",
     location: "Dhakuria, Kolkata 700031",
     address: "Dhakuria, Kolkata, West Bengal 700031",
     phone: "+91 78900 01651 / +91 98300 12345",
-    email: "hello@rongbongstudio.com",
+    email: "hello@abstudio.com",
     tagline: "Expert photographer blending storytelling and artistry in portrait, wedding, maternity, newborn shoots and videography services. Est-2016",
     rating: 4.9,
     reviewsCount: 701
   },
 
   announcement: {
-    text: "☀️ RONGBONG STUDIO — EST-2016 • EXPERT PHOTOGRAPHY & VIDEOGRAPHY SERVICES | Book Slot →",
+    text: "☀️ A B STUDIO — EST-2016 • EXPERT PHOTOGRAPHY & VIDEOGRAPHY SERVICES | Book Slot →",
     link: "#booking"
   },
 
@@ -205,7 +205,7 @@ const CANDID_DATA = {
 
   corporate: {
     title: "Chroma Video & Commercial Studio Hire for Businesses.",
-    desc: "RongBong Studio provides expert photography & videography services, blending storytelling and artistry for corporate video shooting, fashion catalogs, and executive headshots. Est-2016.",
+    desc: "A B Studio provides expert photography & videography services, blending storytelling and artistry for corporate video shooting, fashion catalogs, and executive headshots. Est-2016.",
     tiers: [
       {
         name: "Express Team Shoot",
@@ -272,7 +272,7 @@ const CANDID_DATA = {
       author: "Siddharth & Sneha",
       location: "Dhakuria, Kolkata",
       session: "Pre-Wedding Shoot",
-      quote: "We had our pre-wedding shoot at RongBong Studio! The artistic lighting, privacy, and warm ivory set made our photos look like a magazine cover. Highly recommended!"
+      quote: "We had our pre-wedding shoot at A B Studio! The artistic lighting, privacy, and warm ivory set made our photos look like a magazine cover. Highly recommended!"
     },
     {
       author: "Pooja Banerjee",
@@ -296,12 +296,12 @@ const CANDID_DATA = {
 
   faqs: [
     {
-      question: "What main photoshoot types does RongBong Studio offer in Kolkata?",
+      question: "What main photoshoot types does A B Studio offer in Kolkata?",
       answer: "We specialize in portrait, wedding, maternity, newborn shoots, and videography services. Established in 2016, our expert photographers blend storytelling and artistry into every frame."
     },
     {
-      question: "Where is RongBong Studio located in Kolkata?",
-      answer: "RongBong Studio is located in Dhakuria, Kolkata, West Bengal 700031 (near Dhakuria Railway Station & Bus Stop)."
+      question: "Where is A B Studio located in Kolkata?",
+      answer: "A B Studio is located in Dhakuria, Kolkata, West Bengal 700031 (near Dhakuria Railway Station & Bus Stop)."
     },
     {
       question: "Are props and gown drapings available for Maternity and Newborn shoots?",
@@ -312,7 +312,7 @@ const CANDID_DATA = {
       answer: "All your uncompressed 4K video clips, green screen raw files, and high-resolution photo files are transferred to your drive on the exact same day of your shoot."
     },
     {
-      question: "How do I book a session at RongBong Studio?",
+      question: "How do I book a session at A B Studio?",
       answer: "You can book directly on this site or call us at +91 78900 01651 / +91 98300 12345. We are open Monday – Sunday from 7:00 AM to 6:30 PM."
     }
   ]

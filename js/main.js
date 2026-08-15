@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RONGBONG STUDIO BAGHAJATIN, KOLKATA — MAIN JAVASCRIPT ORCHESTRATOR
+   A B STUDIO DHAKURIA, KOLKATA — MAIN JAVASCRIPT ORCHESTRATOR
    (EST-2016 • EXPERT PHOTOGRAPHY & STORYTELLING)
    ========================================================================== */
 
